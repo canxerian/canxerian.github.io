@@ -1,11 +1,14 @@
 <style>
     #callout {
-      background: #F9F9F9;
+      background: #efefef;
       padding: 1.5em 1.25em;
       border-radius: 3px;
       display: flex;
       flex-direction: row;
       margin-bottom: 20px;
+    }
+    :is(:where(.dark) #callout) {
+      background-color: #272727;
     }
     #callout-inner {
       margin-left: 1em;
