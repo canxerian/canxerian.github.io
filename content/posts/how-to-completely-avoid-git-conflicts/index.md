@@ -1,7 +1,7 @@
 +++
 title = 'How to Completely Avoid Git Conflicts'
-date = 2024-07-15T14:01:23+01:00
-draft = true
+date = 2024-07-15T14:00:00+01:00
+draft = false
 +++
 
 It's time to say goodbye to Git conflicts for good.
@@ -10,9 +10,9 @@ Let’s understand what causes Git conflicts and develop strategies to completel
 
 First, let’s look at a situation that leads to a conflict.
 
-![Illustration of two developers working off the main branch and encountering a git conflict, part 1](images/git-conflict-illustrated-01.png)
+[![Illustration of two developers working off the main branch and encountering a git conflict, part 1](images/git-conflict-illustrated-01.png)](images/git-conflict-illustrated-01.png)
 
-![Illustration of two developers working off the main branch and encountering a git conflict, part 2](images/git-conflict-illustrated-02.png)
+[![Illustration of two developers working off the main branch and encountering a git conflict, part 2](images/git-conflict-illustrated-02.png)](images/git-conflict-illustrated-02.png)
 
 # Simultaneous Edits on the Same Branch e.g main
 
