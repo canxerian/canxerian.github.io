@@ -1,0 +1,11 @@
+img.hover\:animate-spin:hover {
+    animation: none;
+}
+
+div.rounded-full {
+    transition: background-color 1s;
+}
+
+div.rounded-full:has(> img.hover\:animate-spin):hover {
+    background-color: rgb(89, 94, 175);
+}
