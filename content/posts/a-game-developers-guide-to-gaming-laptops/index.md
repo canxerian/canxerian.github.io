@@ -16,23 +16,23 @@ For background, I've been a professional game developer since 2012 and have prog
 
 The journey begins with the storage drive, where your game code, 3D models, shaders, scenes and textures reside. These files are transferred to RAM, where they can be accessed by the CPU billions of times faster than SSD. The CPU constructs the scene, known as a scene hierarchy and then applies physics, AI and other game logic to determine the positions of 3D models. The CPU uses this scene hierarchy, along with information on lights, cameras and materials to instruct the GPU on what to render. This list of instructions is called a [command buffer](https://developer.nvidia.com/blog/advanced-api-performance-command-buffers/)**.** 
 
-You may have heard the term “hardware accelerated”. That's because before the advent of the GPU the CPU did everything beyond this stage - all the complex maths for transforming triangles on to position in the viewport (screen), texture lookups and shading pixels for depth and lighting. The hardware accelerated part comes from offloading operations to dedicated hardware, vastly accelerating the work achieved in any given time frame. 
+You may have heard the term “hardware accelerated”. That's because before the advent of the GPU the CPU did all the complex maths for transforming triangles to viewport (screen) positions, texture lookup, shading, blending and more. The hardware accelerated part comes from offloading operations to dedicated hardware, the GPU, vastly accelerating the work done in any given time frame. 
 
-The CPU is a general purpose processor, whereas the GPU dedicated for the processing maths involved in rendering. For this dedication it foregoes certain functionality, like reading lots of different file formats but excels at massively parallelising the operations it does do - here's a fun video illustrating the concept:
+The CPU is a general purpose, whereas the GPU dedicated. For this dedication it foregoes certain functionality, like reading lots of different file formats but excels at massively parallelising the operations involved in rendering - think one thread per pixel, all processing in parallel - here's a fun video illustrating the concept:
 
 {{< youtube -P28LKWTzrI >}}
 
-This journey, excluding the step from storage to RAM, happens every frame. If this journey takes more than 1000/(# frames per second) milliseconds then you'll experience frame drops i.e poor gaming experience. For 60 fps that 1000/60 = 16.67ms 😟 
+This journey, excluding the step from storage to RAM, happens every frame. If this journey takes more than 1000/(# frames per second) milliseconds then you'll experience frame drops i.e poor gaming experience. For 60 fps that's 1000/60 = 16.67ms. 
 
 ## What's a bottleneck?
 
-A component in the rendering pipeline may not finish its tasks in the target frame time, causing a backlog while other components are underutilized. It's like a 4-lane highway narrowing to 2 lanes—adding a 5th lane doesn't solve the congestion. The symptom of which in games is choppy gameplay and unresponsive input, amongst other undesirable artifacts.
+A component in the rendering pipeline may not finish its tasks in the target frame time, causing a backlog, while other components sit underutilized. It's like a 4-lane highway narrowing to 2 lanes—adding a 5th lane doesn't solve the congestion. The symptom of which in games is choppy gameplay and unresponsive input, amongst other undesirable artifacts.
 
 Let's run through those components and see how they contribute to, or bottleneck, your gaming experience
 
-## What's a Storage Drive responsible for?
+## What's a storage drive responsible for?
 
-- Persistent storage of files. This includes:
+- Persistent storage of files, including:
     - The games assets
     - Game save files
     - DLC content, such as expansions and videos
@@ -42,7 +42,7 @@ Let's run through those components and see how they contribute to, or bottleneck
 - Programs (including games!) will open quicker
 - Scenes load quicker
 - Writing to disk, i.e saving games, will be quicker
-- More storage = more programs (and games!) can be stored on your device
+- More storage = more programs can be stored on your device
 
 ### Is it worth the spend?
 
@@ -68,8 +68,7 @@ There is however, a qualitive aspect to the convenience on internal storage as w
 
 ## What's RAM responsible for
 
-- RAM provides volatile, fast access to files and code for the GPU (compared with a storage device)
-- Temporary storage of data used in algorithms
+- RAM provides volatile (i.e temporary), extremely fast storage of files and game state
 
 ### Why would you want lots of fast RAM?
 
