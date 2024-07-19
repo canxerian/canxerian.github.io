@@ -78,9 +78,9 @@ There is however, a qualitive aspect to the convenience on internal storage as w
 
 ### Is it worth the spend?
 
-Games usually come with a system requirements, for example, Cyberpunk 2077 requires 12GB whilst a more casual game like Fall Guys requires 8GB. Bear in mind the operating system needs (approximately 4GB) and any other programs you have in the background. 
+Games usually come with a system requirements, for example, Cyberpunk 2077 requires 12GB whilst a more casual game like Fall Guys requires 8GB. Bear in mind the operating system needs approximately 4GB and any other programs you have in the background. 
 
-RAM used to be is one of the few components that could easily upgraded but we're seeing a trend towards soldered RAM, thereby reducing upgradability. Whilst I don't have a rule of thumb, it'd be prudent to look at the system requirements of the games you play most, add an additional 4GB for the operating system then doubling for future proofing. For Cyberpunk that would mean (12GB + 4GB) * 2 = 32GB 
+RAM used to be is one of the few components that could easily upgraded but we're seeing a trend towards soldered RAM on laptoos, thereby reducing upgradability. Whilst I don't have a rule of thumb, it'd be prudent to look at the system requirements of the games you play most, add an additional 4GB for the operating system then double the figure for general smooth running and future proofing. For Cyberpunk that would mean (12GB + 4GB) * 2 = 32GB 
 
 ## What's the CPU responsible for?
 
@@ -88,11 +88,11 @@ The CPU is a general processing unit, meaning it can do it all.. even rendering!
 
 - File I/O , such as loading 3D environments and audio, and saving game state.
 - Physics, e.g ragdolls, locomotives, projectiles and destructibles
-- Game logic, such as damage dealt,  l
-- UI data (not rendering of), such as health cars, inventory, scene selection, HUDs
+- Game logic, such as damage dealt
+- UI data (but not the rendering of), such as health, inventory, scene selection, HUDs
 - Updating player stats, e.g health, XP
 - Animations
-- AI logic, including enemy behaviour,
+- AI logic, including enemy and NPC behaviour
 - Input handling
 - Game loop execution
 - Networking
@@ -105,21 +105,21 @@ The CPU is a general processing unit, meaning it can do it all.. even rendering!
 
 ### Clock speed vs number of cores
 
-To compare apples with apples among CPUs, I like to look at these two metrics. If a game isn't built with an an engine that utilises multi-threading, then cores will sit idle and unused. Utilising more cores means more parallel-processing which results in greater bandwidth and less chance of frame drops. However, game logic often needs to run in sequence, e.g read user input, then calculate new player position, then update physics, then update camera and so forth, so there's not much work that naturally lends itself well to parallelising.
+To compare apples with apples among CPUs, I like to look at these two metrics. If a game isn't built with an an engine that utilises multi-threading, then cores will sit idle and unused. Utilising more cores means more parallel-processing which results in greater bandwidth and less chance of frame drops. However, game logic often needs to run in sequence, e.g read user input, then calculate new player position, then update physics, then update camera and so forth, so there's often not much code within the context of a game that naturally lends itself to parallelisation.
 
-That being said, certain tasks do lend well, such as networking, loading/saving files and audio. Thankfully Unity and Unreal make partial use of threads. The rest however, is developer dependant. 
+That being said, certain tasks do lend well, such as downloading files in the background, loading/saving files and audio. Thankfully Unity and Unreal make partial use of threads. The rest however, is developer dependant. 
 
 ### Why not just increase clock speeds?
 
-Clock speeds did increase almost exponentially year-on-year up until the mid-2000s, but due to heat, energy efficiency requirements and physical limitations of electrons, chip makers invented a new way of increasing performance: more cores. The (very brief) idea is to deploy multiple CPU cores running at lower speeds but processing in parallel.
+Clock speeds did increase almost year-on-year up until the mid-2000s, but due to heat, energy efficiency and physical limitations of electrons, chip makers invented a new way to increase performance: more cores. The (very brief) idea is to deploy multiple CPU cores running at lower speeds but processing in parallel.
 
 ### Is it worth the spend?
 
-As established, one clock speed limiting factor is temperature and there are cheap ways to cool a laptop, such as a stand. This prevents **throttling**, a process where CPUs are underclocked to prevent damage. 
+As established, one limiting factor to higher clock speed is temperature and there are cheap ways to cool a laptop, such as a stand. This prevents **throttling**, a process where CPUs are dynamically underclocked to prevent damage. 
 
-Games that simulate lots of objects (RTS games for example) will consume a fair chunk of CPU, as will   games that rely on high resolution physics. 
+Games that simulate lots of objects (RTS games for example) will consume a fair chunk of CPU, as well as games that rely on high resolution physics. 
 
-If loading times are important then a fast SSD + CPU combo will areas to focus on.
+If loading times are important then a fast SSD + CPU combo are areas to focus on.
 
 ## What's the GPU for?
 
@@ -154,11 +154,11 @@ The settings that will give you the biggest performance boost would be: reducing
 
 So whilst in many cases it will still be possible to play most games with an entry/mid level GPU, you might not be able to play them max settings.
 
-On a personal note, most of the game design I love do not rely on fancy graphics, and the attraction of graphical fidelity tends to fade away as I get more immersed in the story and game play. Also, art style plays a huge role in immersion and physically accurate doesn't always equate to better gameplay. Afterall, games present the opportunity to experience a different reality for a short amount of time, do we really want every single light, camera and character to be so physically accurate that there's no room for artistic interpretation?
+On a personal note, much of the game design I love does not rely on fancy graphics, and the initial impression of graphical fidelity tends to fade away as I get more immersed in the story and game play. Also, art style plays a huge role in my enjoyment of a game and graphically intensive, physically accurate rendering doesn't always equate to a better game. Afterall, games present the opportunity to experience a different reality for a short time, do I really want every single light, camera and character to be so physically accurate that there's no room for artistic interpretation?
 
 ## Conclusion
 
-Laptops and their components are marketed with ever increasing numbers and letters that make consumers feel a sense of urgency to stay at the cutting edge. Hopefully this article demystifies some of those numbers and helps you understand what personally matters, be that fast load times, highly accurate physics or raytraced lighting.
+Laptops and their components are marketed with ever increasing numbers and letters that make consumers feel a sense of urgency to stay at the cutting edge. Hopefully this article demystifies some of those numbers and helps you understand what personally matters, be that fast load times, highly accurate physics or high fidelity graphics.
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
