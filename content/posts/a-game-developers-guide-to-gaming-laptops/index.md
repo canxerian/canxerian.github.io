@@ -203,8 +203,6 @@ const priceComparisonChart = new Chart(ctx, {
         scales: {
             y: {
                 ticks: {
-                    // Include a dollar sign in the ticks
-                    //callback: (value, index, ticks) => '$' + Chart.Ticks.formatters.numeric.apply(this, [value, index, ticks])
                     callback: function (value, index, ticks) {
                         return 'GBP ' + value;
                     }
