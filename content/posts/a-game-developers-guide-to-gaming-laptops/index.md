@@ -1,5 +1,5 @@
 +++
-title = 'A Game Developers Guide to Gaming Laptops'
+title = 'A Game Developer's Guide to Gaming Laptops'
 date = 2024-07-17T21:13:32+01:00
 draft = false
 +++
