@@ -47,7 +47,19 @@ Let's run through those components and see how they contribute to, or bottleneck
 ### Is it worth the spend?
 
 <div>
-    <canvas id="storage-internal-vs-external-chart"></canvas>
+    <figure>
+        <canvas id="storage-internal-vs-external-chart"></canvas>
+    </figure>
+    <figcaption>
+        Source (19th July 2024): <br />
+        <a href="https://www.westerndigital.com/en-gb/topics/sandisk/portable-ssd">
+            https://www.westerndigital.com/en-gb/topics/sandisk/portable-ssd
+        </a>
+        <br />
+        <a href="https://www.razer.com/gb-en/gaming-laptops/Razer-Blade-16/RZ09-05102WN9-R3W1">
+            https://www.razer.com/gb-en/gaming-laptops/Razer-Blade-16/RZ09-05102WN9-R3W1
+        </a>
+    </figcaption>
 </div>  
 
 If you're happy to offload non-game files to external storage (such as personal videos, photos, documents) and prioritise internal storage for games, then there's a big saving to be made.
@@ -224,8 +236,3 @@ const priceComparisonChart = new Chart(ctx, {
     }
 });
 </script>
-
-{{/*  Source:
-https://www.westerndigital.com/en-gb/topics/sandisk/portable-ssd
-https://www.razer.com/gb-en/gaming-laptops/Razer-Blade-16/RZ09-05102WN9-R3W1
-*/}}
