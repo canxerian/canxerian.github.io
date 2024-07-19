@@ -1,7 +1,7 @@
 +++
 title = 'A Game Developers Guide to Gaming Laptops'
 date = 2024-07-17T21:13:32+01:00
-draft = true
+draft = false
 +++
 
 A frame, *as in frames-per-second*  is made up of (1920 x 1080) 2,073,600 pixels for a 1080p display. Line up 60 frames in sequence before our eyeballs and you achieve a [zoetropian](https://en.wikipedia.org/wiki/Zoetrope) illusion of motion. The pixels that make up the *frame* need to be calculated at blistering fast speeds - for 60fps, that ‘s under 16.67 milliseconds! For comparison, the average human blink takes [100-150ms](https://www.ucl.ac.uk/news/2005/jul/blink-and-you-miss-it).
