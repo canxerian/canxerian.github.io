@@ -1,4 +1,5 @@
-import { resolve } from 'path';
+import { glob } from "glob";
+import { resolve } from "path";
 import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 
@@ -10,10 +11,10 @@ export default defineConfig({
     },
     build: {
         rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-                nested: resolve(__dirname, 'nested/index.html'),
-            },
+            input: [
+                resolve(__dirname, "index.html"),
+                ...glob.sync(resolve(__dirname, "projects", "*.html")),
+            ]
         },
     },
 });
