@@ -10,7 +10,7 @@
     }
 
     main {
-        @apply w-full max-w-2xl min-h-screen py-1 flex flex-col gap-16 px-2;
+        @apply w-full max-w-[820px] min-h-screen pt-2 pb-12 flex flex-col gap-16 px-2
     }
 
     h1 {
