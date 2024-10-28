@@ -3,7 +3,7 @@ export default {
   content: ["*.{html,js}"],
   theme: {
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      hg: ['Hanken Grotesk', 'Arial'],
     },
     extend: {},
 
