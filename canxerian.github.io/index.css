@@ -5,6 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        @apply flex justify-center items-start overflow-y-auto;
+    }
+
+    main {
+        @apply w-full max-w-2xl min-h-screen py-1 flex flex-col gap-16 px-2;
+    }
+
     h1 {
         @apply font-hg text-3xl;
     }
