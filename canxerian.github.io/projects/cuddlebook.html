@@ -5,6 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/index.css" rel="stylesheet">
+  <style>
+    span.ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 600ms linear;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,14 +37,20 @@
           <hr class="h-2 w-20 bg-fuchsia-800" />
           <p>An app for bilingual families to read stories together</p>
         </header>
-        <section>
-          <h2>Overview</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Maiores id officia ab rem, aspernatur ratione? Aut officia
-            est quasi provident, deserunt dolorum quam. Vitae atque,
-            libero quos at minus rem!
-          </p>
+        <section class="flex flex-col gap-4">
+          <h2 class="font-bold">Overview</h2>
+          <p>Cuddlebook is a mobile app created from a personal desire to teach my children my second languages (Cantonese).</p>
+          <p>The app is filled with short stories, perfect for any time of day, especially as part of a bedtime routine. </p>
+          <p>It features AI-powered text-to-speech to help both parent and child learn the correct pronunciation of any given word or phrase.</p>
         </section>
+        <section class="flex flex-col gap-2">
+          <h2 class="font-bold">Technical</h2>
+          <p>Built with React Native.</p>
+          <p>Designed and developed independently by me.</p>
+        </section>
+        <a href="/" class="self-start items-center text-white p-4 rounded bg-gradient-to-r from-purple-800 to-fuchsia-800 hover:from-purple-950 hover:to-fuchsia-950">
+          Back to projects
+        </a>
       </section>
       <section class="flex flex-col gap-4">
         <figure class="w-full aspect-video bg-slate-500"></figure>
@@ -37,6 +59,33 @@
     </article>
   </main>
   <script type="module" src="/src/main.ts"></script>
+
+  <script>
+    function rippleEffect(event) {
+      console.log(event)
+      const btn = event.currentTarget;
+
+      const circle = document.createElement("span");
+      const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - (btn.offsetLeft + radius)}px`;
+      circle.style.top = `${event.clientY - (btn.offsetTop + radius)}px`;
+      circle.classList.add("ripple");
+
+      const ripple = btn.getElementsByClassName("ripple")[0];
+
+      if (ripple) {
+        ripple.remove();
+      }
+
+      btn.appendChild(circle);
+    }
+
+    const btn = document.getElementById("bt");
+    btn.addEventListener("click", rippleEffect);
+  </script>
 </body>
 
 </html>
