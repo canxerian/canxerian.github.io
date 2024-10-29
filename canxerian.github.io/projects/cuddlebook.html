@@ -4,14 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../index.css" rel="stylesheet">
+  <link href="/index.css" rel="stylesheet">
 </head>
 
 <body>
   <main>
     <nav>
-      <h1 class="font-sans">mark nguyen.</h1>
+      <a href="/">
+        <h1>mark nguyen.</h1>
+      </a>
     </nav>
+    <article class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <section class="flex flex-col gap-12">
+        <header class="flex flex-col gap-4">
+          <h1 class="text-6xl">Cuddlebook</h1>
+          <hr class="h-2 w-20 bg-fuchsia-800" />
+          <p>An app for bilingual families to read stories together</p>
+        </header>
+        <section>
+          <h2>Overview</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Maiores id officia ab rem, aspernatur ratione? Aut officia
+            est quasi provident, deserunt dolorum quam. Vitae atque,
+            libero quos at minus rem!
+          </p>
+        </section>
+      </section>
+      <section class="flex flex-col gap-4">
+        <figure class="w-full aspect-video bg-slate-500"></figure>
+        <figure class="w-full aspect-square bg-slate-500"></figure>
+      </section>
+    </article>
   </main>
   <script type="module" src="/src/main.ts"></script>
 </body>

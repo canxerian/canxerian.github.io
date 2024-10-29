@@ -9,8 +9,8 @@
 
 <template id="project-thumb-template">
   <article>
-    <a href="/projects/cuddlebook.html" class="relative block rounded-md w-full bg-gradient-to-tr from-purple-500 to-yellow-700 aspect-video overflow-hidden group">
-      <video autoplay loop muted class="group-hover:scale-110 transition-transform duration-500">
+    <a href="/projects/cuddlebook.html" class="relative block rounded-xl w-full bg-gradient-to-tr from-purple-500 to-yellow-700 aspect-video overflow-hidden group">
+      <video autoplay loop muted class="w-full group-hover:scale-110 transition-transform duration-500">
         <source src="assets/cuddlebook-01.mp4" type="video/mp4">
       </video>
       <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -23,14 +23,14 @@
 <body>
   <main>
     <nav>
-      <h1 class="font-sans">mark nguyen.</h1>
+      <h1>mark nguyen.</h1>
     </nav>
     <section>
-      <h2>ABOUT</h2>
+      <h2 class="tracking-[0.8rem]">ABOUT</h2>
       <p>I'm a full stack programmer and designer who builds 3D experiences</p>
     </section>
     <section>
-      <h2>PROJECTS</h2>
+      <h2 class="tracking-[0.8rem]">PROJECTS</h2>
       <div id="project-thumbs-container" class="flex flex-col gap-8"></div>
     </section>
   </main>
@@ -39,16 +39,18 @@
     const template = document.getElementById("project-thumb-template");
     const container = document.getElementById("project-thumbs-container");
 
-    function createProjectThumb(videoSrc, hoverText) {
+    function createProjectThumb(href, videoSrc, hoverText) {
       const projectThumb = document.importNode(template.content, true);
+      projectThumb.querySelector("a").href = href;
       projectThumb.querySelector("video").src = videoSrc;
       projectThumb.querySelector("p").innerHTML = hoverText;
 
       container.appendChild(projectThumb);
     }
 
-    createProjectThumb("./assets/cuddlebook-01.mp4", "Cuddlebook");
-    createProjectThumb("./assets/arctic-01.mp4", "Arctic Sea Ice");
+    createProjectThumb("/projects/cuddlebook.html", "./assets/cuddlebook-01.mp4", "Cuddlebook");
+    createProjectThumb("/projects/arctic-sea-ice.html", "./assets/arctic-01.mp4", "Arctic Sea Ice");
+    createProjectThumb("/projects/lusion.html", "./assets/lusion-01.mp4", "Lusion.co, reverse-engineered");
   </script>
 </body>
 
