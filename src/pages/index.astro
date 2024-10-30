@@ -1,5 +1,5 @@
 ---
-import ProjectItem from "../components/ProjectItem.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
 import vidCuddlebook from "../assets/cuddlebook-01.mp4";
 import vidArctic from "../assets/arctic-01.mp4";
@@ -15,22 +15,22 @@ import vidLusion from "../assets/lusion-01.mp4";
 		<h2 class="tracking-[0.8rem]">PROJECTS</h2>
 		<!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-4"> -->
 		<div class="flex flex-col gap-20">
-			<ProjectItem
+			<ProjectCard
 				title="Cuddlebook"
 				videoSrc={vidCuddlebook}
 				href="/projects/cuddlebook"
 			/>
-			<ProjectItem
+			<ProjectCard
 				title="Arctic Sea Ice"
 				videoSrc={vidArctic}
 				href="/projects/arctic-sea-ice"
 			/>
-			<ProjectItem
+			<ProjectCard
 				title="Lusion, reverse engineered"
 				videoSrc={vidLusion}
 				href="/projects/lusion-reverse-engineered"
 			/>
-			<ProjectItem
+			<ProjectCard
 				title="Lusion, reverse engineered"
 				videoSrc={vidLusion}
 				href="/projects/lusion-reverse-engineered"
