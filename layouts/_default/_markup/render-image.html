@@ -1,9 +1,0 @@
-<figure>
-    <a class="not-prose" href="{{ .Destination | safeURL }}" target="_blank">
-        <img src="{{ .Destination | safeURL }}" {{- with .Text }} alt="{{ . }}" {{ end -}} {{- with .Title }}
-            title="{{ . }}" {{ end -}}>
-    </a>
-    <figcaption>
-        {{ with .Title }} {{ . | markdownify }} {{ end }}
-    </figcaption>
-</figure>
