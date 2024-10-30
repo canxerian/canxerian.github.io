@@ -1,7 +1,20 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-export function getStaticPaths() {
+const posts = Object.values(
+  await import.meta.glob("../../content/projects/*.md", { eager: true }),
+);
+
+export async function getStaticPaths() {
+  const projects: any[] = Object.values(
+    await import.meta.glob("../../content/projects/*.md", {
+      eager: true,
+    }),
+  );
+
+  console.log("1 " + JSON.stringify(projects));
+  console.log("2 " + JSON.stringify(projects.map((p) => p.file)));
+
   return [
     { params: { slug: "cuddlebook" } },
     { params: { slug: "arctic-sea-ice" } },
@@ -9,10 +22,43 @@ export function getStaticPaths() {
   ];
 }
 
+// import { getMarkdownCollection } from "@astro/client";
+// import { Markdown } from "@astro/components";
+
+// export async function getStaticPaths() {
+//   const markdownFiles = await import.meta.glob("/src/content/*.md");
+//   // const posts = await getMarkdownCollection("/src/content");
+//   const posts: any[] = Object.values(
+//     await import.meta.glob("../posts/*.md", { eager: true }),
+//   );
+
+//   console.log("POSTS", posts)
+
+//   return posts.map((post) => ({
+//     params: { slug: post.url },
+//     props: { post },
+//   }));
+// }
+
 const { slug } = Astro.params;
 ---
 
-<Layout title="Welcome to Astro.">
+<!-- 
+
+Usage:
+
+  heading
+    p
+    p
+
+  heading
+    p
+    p
+
+
+  Some images
+-->
+<Layout>
   <main class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <section class="flex flex-col gap-12">
       <header class="flex flex-col gap-4">
@@ -52,7 +98,17 @@ const { slug } = Astro.params;
       <figure class="w-full aspect-square bg-slate-500"></figure>
     </section>
   </main>
-  <p class="py-10 text-cyan-100">
-    {slug}
-  </p>
 </Layout>
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  section.lhs {
+    @apply flex flex-col gap-4;
+
+    h2 {
+      @apply font-bold;
+    }
+  }
+</style>
