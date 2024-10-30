@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "cuddlebook" } },
+    { params: { slug: "arctic-sea-ice" } },
+    { params: { slug: "lusion-reverse-engineered" } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section class="flex flex-col gap-12">
+      <header class="flex flex-col gap-4">
+        <h1 class="text-6xl">Cuddlebook</h1>
+        <hr class="h-2 w-20 bg-fuchsia-800" />
+        <p>An app for bilingual families to read stories together</p>
+      </header>
+      <section class="flex flex-col gap-4">
+        <h2 class="font-bold">Overview</h2>
+        <p>
+          Cuddlebook is a mobile app created from a personal desire to teach my
+          children my second languages (Cantonese).
+        </p>
+        <p>
+          The app is filled with short stories, perfect for any time of day,
+          especially as part of a bedtime routine.
+        </p>
+        <p>
+          It features AI-powered text-to-speech to help both parent and child
+          learn the correct pronunciation of any given word or phrase.
+        </p>
+      </section>
+      <section class="flex flex-col gap-2">
+        <h2 class="font-bold">Technical</h2>
+        <p>Built with React Native.</p>
+        <p>Designed and developed independently by me.</p>
+      </section>
+      <a
+        href="/"
+        class="self-start items-center text-white p-4 rounded bg-gradient-to-r from-purple-800 to-fuchsia-800 hover:from-purple-950 hover:to-fuchsia-950"
+      >
+        Back to projects
+      </a>
+    </section>
+    <section class="flex flex-col gap-4">
+      <figure class="w-full aspect-video bg-slate-500"></figure>
+      <figure class="w-full aspect-square bg-slate-500"></figure>
+    </section>
+  </main>
+  <p class="py-10 text-cyan-100">
+    {slug}
+  </p>
+</Layout>
