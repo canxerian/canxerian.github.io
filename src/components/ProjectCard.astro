@@ -1,6 +1,6 @@
 ---
 interface Props {
-  videoSrc: string;
+  videoSrc?: string;
   title: string;
   href: string;
 }
@@ -13,19 +13,23 @@ const props = Astro.props;
     href={props.href}
     class="relative block rounded-xl w-full bg-gradient-to-tr from-purple-500 to-yellow-700 aspect-video overflow-hidden group"
   >
-    <video
-      autoplay
-      loop
-      muted
-      class="w-full group-hover:scale-110 transition-transform duration-1000"
-    >
-      <source src=`${props.videoSrc}` type="video/mp4" />
-    </video>
+    {
+      props.videoSrc && (
+        <video
+          autoplay
+          loop
+          muted
+          class="w-full group-hover:scale-110 transition-transform duration-1000"
+        >
+          <source src={props.videoSrc} type="video/mp4" />
+        </video>
+      )
+    }
     <div
       class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
     >
       <p
-        class="text-4xl text-white group-hover:tracking-wide transition-all duration-1000"
+        class="text-3xl text-center p-4 text-white group-hover:tracking-wide transition-all duration-1000"
       >
         {props.title}
       </p>
