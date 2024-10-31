@@ -6,12 +6,21 @@ interface Props {
 }
 
 const props = Astro.props;
+
+const gradients = [
+  "bg-gradient-to-br from-blue-300 to-rose-300",
+  "bg-gradient-to-tr from-purple-500 to-yellow-700",
+  "bg-gradient-to-br from-stone-300 to-red-300",
+  "bg-gradient-to-tl from-neutral-200 to-fuchsia-200"
+];
+const randomIndex = Math.floor(Math.random() * gradients.length);
+const gradient = gradients[randomIndex];
 ---
 
 <article>
   <a
     href={props.href}
-    class="relative block rounded-xl w-full bg-gradient-to-tr from-purple-500 to-yellow-700 aspect-video overflow-hidden group"
+    class=`relative block rounded-xl w-full aspect-video overflow-hidden group ${gradient}`
   >
     {
       props.videoSrc && (
@@ -19,17 +28,17 @@ const props = Astro.props;
           autoplay
           loop
           muted
-          class="w-full group-hover:scale-110 transition-transform duration-1000"
+          class="w-full group-hover:scale-[105%] transition-transform duration-1000"
         >
           <source src={props.videoSrc} type="video/mp4" />
         </video>
       )
     }
     <div
-      class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      class="absolute inset-0 flex items-center justify-center bg-black opacity-75 group-hover:opacity-0 transition-opacity duration-300"
     >
       <p
-        class="text-3xl text-center p-4 text-white group-hover:tracking-wide transition-all duration-1000"
+        class="text-xl text-center p-4 text-white group-hover:tracking-wide transition-all duration-1000"
       >
         {props.title}
       </p>
