@@ -1,0 +1,11 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<video autoplay loop muted class="w-full">
+  <source src={src} type="video/mp4" />
+</video>

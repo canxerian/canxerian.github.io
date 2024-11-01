@@ -6,6 +6,7 @@ import cuddlebookImg3 from "./cuddlebook/cuddlebook-img-03.png";
 import Layout from "../../layouts/Layout.astro";
 import "./project-page.css";
 import { Picture } from "astro:assets";
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 ---
 
 <Layout>
@@ -39,21 +40,11 @@ import { Picture } from "astro:assets";
       </section>
     </article>
     <article class="right-side">
-      <figure class="w-full aspect-video bg-slate-500">
-        <video
-          autoplay
-          loop
-          muted
-          class="w-full group-hover:scale-[105%] transition-transform duration-1000"
-        >
-          <source src={cuddlebookVid} type="video/mp4" />
-        </video>
-      </figure>
+      <ProjectPageVideo src={cuddlebookVid} />
       <Picture
         src={cuddlebookImg1}
         formats={["avif", "webp"]}
         alt="Cuddlebook, mobile app screenshots"
-        alt="A description of my image."
       />
       <Picture
         src={cuddlebookImg2}

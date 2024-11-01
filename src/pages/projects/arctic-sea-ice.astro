@@ -1,6 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import "./project-page.css";
+import vidArctic2 from "./arctic/arctic-vid-02.mp4";
+import vidArctic3 from "./arctic/arctic-vid-03.mp4";
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 ---
 
 <Layout>
@@ -19,15 +22,14 @@ import "./project-page.css";
         <p>Designed, developed and published independently by me.</p>
       </section>
       <section class="!gap-2 !flex-row">
-        <a href="https://canxerian.com/arctic-sea-ice/" class="button"
-          >Visit the site</a
-        >
-        <a href="/" class="button">Back to projects</a>
+        <a href="https://canxerian.com/arctic-sea-ice/" class="button">
+          Visit Site
+        </a>
       </section>
     </article>
     <article class="right-side">
-      <figure class="w-full aspect-video bg-slate-500"></figure>
-      <figure class="w-full aspect-square bg-slate-500"></figure>
+      <ProjectPageVideo src={vidArctic2} />
+      <ProjectPageVideo src={vidArctic3} />
     </article>
   </main>
 </Layout>
