@@ -1,12 +1,18 @@
 ---
+import cuddlebookVid from "./cuddlebook/cuddlebook-vid-02.mp4";
+import cuddlebookImg1 from "./cuddlebook/cuddlebook-img-01.png";
+import cuddlebookImg2 from "./cuddlebook/cuddlebook-img-02.png";
+import cuddlebookImg3 from "./cuddlebook/cuddlebook-img-03.png";
 import Layout from "../../layouts/Layout.astro";
 import "./project-page.css";
+import { Picture } from "astro:assets";
 ---
 
 <Layout>
   <main class="project-content">
     <article class="left-side">
       <header>
+        <time>June 2023</time>
         <h1>Cuddlebook</h1>
         <hr />
         <p>An app for bilingual families to read stories together</p>
@@ -31,11 +37,34 @@ import "./project-page.css";
         <p>Built with React Native.</p>
         <p>Designed, developed and published independently by me.</p>
       </section>
-      <a href="/" class="button"> Back to projects </a>
     </article>
     <article class="right-side">
-      <figure class="w-full aspect-video bg-slate-500"></figure>
-      <figure class="w-full aspect-square bg-slate-500"></figure>
+      <figure class="w-full aspect-video bg-slate-500">
+        <video
+          autoplay
+          loop
+          muted
+          class="w-full group-hover:scale-[105%] transition-transform duration-1000"
+        >
+          <source src={cuddlebookVid} type="video/mp4" />
+        </video>
+      </figure>
+      <Picture
+        src={cuddlebookImg1}
+        formats={["avif", "webp"]}
+        alt="Cuddlebook, mobile app screenshots"
+        alt="A description of my image."
+      />
+      <Picture
+        src={cuddlebookImg2}
+        formats={["avif", "webp"]}
+        alt="Cuddlebook, mobile app screenshots"
+      />
+      <Picture
+        src={cuddlebookImg3}
+        formats={["avif", "webp"]}
+        alt="Cuddlebook, mobile app screenshots"
+      />
     </article>
   </main>
 </Layout>

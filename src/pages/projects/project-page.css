@@ -8,6 +8,10 @@ article.left-side {
   header {
     @apply flex flex-col gap-4;
 
+    time {
+      @apply text-sm;
+    }
+
     h1 {
       @apply text-6xl;
     }
