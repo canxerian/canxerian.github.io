@@ -1,37 +1,40 @@
 main.project-content {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  @apply grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20;
 
-
-  article.left-side {
-    @apply flex flex-col gap-12;
-
-    header {
-      @apply flex flex-col gap-4;
-
-      time {
-        @apply text-sm;
-      }
-
-      h1 {
-        @apply text-6xl;
-      }
-
-      hr {
-        @apply h-2 w-20 bg-fuchsia-700;
-      }
-    }
-
-    section {
-      @apply flex flex-col gap-4;
-
-      h2 {
-        @apply font-bold;
-      }
-    }
+  h1 {
+    @apply text-6xl;
   }
 
-  article.right-side {
+  h2 {
+    @apply font-bold;
+  }
+
+  hr {
+    @apply h-2 w-20 bg-fuchsia-700;
+  }
+
+  time {
+    @apply text-sm;
+  }
+
+  section {
     @apply flex flex-col gap-4;
+  }
+
+  header {
+    @apply flex flex-col gap-4;
+  }
+
+  article {
+    @apply flex flex-col;
+
+    &.left-side {
+      @apply gap-12;
+    }
+
+    &.right-side {
+      @apply gap-4;
+    }
   }
 
   a {
