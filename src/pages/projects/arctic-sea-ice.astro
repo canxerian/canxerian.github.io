@@ -1,6 +1,7 @@
 ---
 import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 import Layout from "../../layouts/Layout.astro";
+import vidArctic1 from "./arctic/arctic-vid-01.mp4";
 import vidArctic2 from "./arctic/arctic-vid-02.mp4";
 import vidArctic3 from "./arctic/arctic-vid-03.mp4";
 import "./project-page.css";
@@ -8,38 +9,51 @@ import "./project-page.css";
 
 <Layout>
   <main class="project-content">
-    <article class="left-side">
-      <header>
-        <h1>Arctic Sea Ice</h1>
-        <hr class="!bg-slate-500" />
-        <p>A 3D visualiser of NASA's Arctic sea ice data</p>
-        <a href="https://canxerian.com/arctic-sea-ice/"
-          >https://canxerian.com/arctic-sea-ice</a
-        >
-      </header>
+    <article>
       <section>
-        <h2>Overview</h2>
-        <p>
-          Each month, NASA captures satellite images showing the extent and
-          volume of Arctic sea ice.
-        </p>
-        <p>
-          I built a 3D visualiser using WebGL (BabylonJS) and React to quickly
-          assess trends and stories in that data
-        </p>
+        <header>
+          <h1>Arctic Sea Ice</h1>
+          <hr class="!bg-slate-500" />
+          <p>A 3D visualiser of NASA's Arctic sea ice data</p>
+          <a href="https://canxerian.com/arctic-sea-ice/"
+            >https://canxerian.com/arctic-sea-ice</a
+          >
+        </header>
+        <section>
+          <h2>Overview</h2>
+          <p>
+            Each month, NASA captures satellite images showing the extent and
+            volume of Arctic sea ice.
+          </p>
+          <p>
+            I built a 3D visualiser using WebGL (BabylonJS) and React to quickly
+            assess trends and stories in that data
+          </p>
+        </section>
       </section>
+      <section>
+        <ProjectPageVideo src={vidArctic1} />
+      </section>
+
       <section>
         <h2>Rationale</h2>
         <p>
           These datasets are vast and complex, and navigating them can be
           challenging—especially for those without specialized training or tools
-          to interpret the data effectively. While traditional visualizations
-          like 2D graphs and charts are helpful, they don't fully convey the
-          spatial nature of Arctic sea ice data. My goal is to experiment with a
-          more immersive, 3D visualization—almost like a game—to make this data
-          more intuitive and accessible.
+          to interpret the data effectively.
+        </p>
+        <p>
+          While traditional visualizations like 2D graphs and charts are
+          helpful, they don't fully convey the spatial nature of Arctic sea ice
+          data.
+        </p>
+        <p>
+          My goal is to experiment with a more immersive, 3D
+          visualization—almost like a game—to make this data more intuitive and
+          accessible.
         </p>
       </section>
+      <section></section>
       <section>
         <h2>Technical Process</h2>
         <p>
@@ -56,15 +70,16 @@ import "./project-page.css";
         </p>
       </section>
       <section></section>
-      <section class="!gap-2 !flex-row">
-        <a href="https://canxerian.com/arctic-sea-ice/" class="button">
-          Visit Site
-        </a>
+      <section>
+        <h2>2D to 3D transition</h2>
+        <p>
+          The image (below) is used an input to a custom shader on the globe
+          model. Using the legend as a height look-up-table, I displace the
+          height along the globe’s normal vector, thus giving a 3D
+          representation for sea ice concentration.
+        </p>
       </section>
-    </article>
-    <article class="right-side">
-      <ProjectPageVideo src={vidArctic2} />
-      <ProjectPageVideo src={vidArctic3} />
+      <section></section>
     </article>
   </main>
 </Layout>

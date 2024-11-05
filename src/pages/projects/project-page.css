@@ -1,5 +1,5 @@
 main.project-content {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20;
+  @apply flex flex-col gap-y-20;
 
   h1 {
     @apply text-6xl;
@@ -17,24 +17,16 @@ main.project-content {
     @apply text-sm;
   }
 
+  article {
+    @apply grid grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-2 lg:gap-y-32;
+  }
+
   section {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col gap-y-4;
   }
 
   header {
-    @apply flex flex-col gap-4;
-  }
-
-  article {
-    @apply flex flex-col;
-
-    &.left-side {
-      @apply gap-12;
-    }
-
-    &.right-side {
-      @apply gap-4;
-    }
+    @apply flex flex-col gap-4 mb-12;
   }
 
   a {
