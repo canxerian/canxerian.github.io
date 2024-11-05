@@ -8,9 +8,11 @@ const { src, aspect } = Astro.props;
 ---
 
 <figure
-  class=`${aspect === "square" && "w-full bg-gray-950 aspect-square flex justify-center align-middle"}`
+  class="rounded-md p-2 w-full aspect-square flex justify-center align-middle bg-gradient-to-r from-blue-600 to-violet-600"
 >
-  <video autoplay loop muted class="w-full">
-    <source src={src} type="video/mp4" />
-  </video>
+  <div class="overflow-hidden rounded-md self-center">
+    <video autoplay loop muted class="w-full">
+      <source src={src} type="video/mp4" />
+    </video>
+  </div>
 </figure>
