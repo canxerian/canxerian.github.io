@@ -1,9 +1,9 @@
 ---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 import Layout from "../../layouts/Layout.astro";
-import "./project-page.css";
 import vidArctic2 from "./arctic/arctic-vid-02.mp4";
 import vidArctic3 from "./arctic/arctic-vid-03.mp4";
-import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import "./project-page.css";
 ---
 
 <Layout>
@@ -12,15 +12,50 @@ import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
       <header>
         <h1>Arctic Sea Ice</h1>
         <hr class="!bg-slate-500" />
-        <p>A super fast, 3D visualiser of NASA's Arctic sea ice data</p>
+        <p>A 3D visualiser of NASA's Arctic sea ice data</p>
+        <a href="https://canxerian.com/arctic-sea-ice/"
+          >https://canxerian.com/arctic-sea-ice</a
+        >
       </header>
       <section>
         <h2>Overview</h2>
+        <p>
+          Each month, NASA captures satellite images showing the extent and
+          volume of Arctic sea ice.
+        </p>
+        <p>
+          I built a 3D visualiser using WebGL (BabylonJS) and React to quickly
+          assess trends and stories in that data
+        </p>
       </section>
       <section>
-        <h2>Technical</h2>
-        <p>Designed, developed and published independently by me.</p>
+        <h2>Rationale</h2>
+        <p>
+          These datasets are vast and complex, and navigating them can be
+          challenging—especially for those without specialized training or tools
+          to interpret the data effectively. While traditional visualizations
+          like 2D graphs and charts are helpful, they don't fully convey the
+          spatial nature of Arctic sea ice data. My goal is to experiment with a
+          more immersive, 3D visualization—almost like a game—to make this data
+          more intuitive and accessible.
+        </p>
       </section>
+      <section>
+        <h2>Technical Process</h2>
+        <p>
+          The source dataset consists of two key elements: gradient-based images
+          representing ice distribution, and numerical values for ice extent and
+          volume. However, these elements are stored in multiple folders and
+          files, making comparisons time-consuming.
+        </p>
+        <p>
+          To streamline this, I transformed the data so it could be read quickly
+          in React. As users scroll, the relevant satellite image updates
+          instantanousely, allowing quick interrogation of large volumes of
+          data.
+        </p>
+      </section>
+      <section></section>
       <section class="!gap-2 !flex-row">
         <a href="https://canxerian.com/arctic-sea-ice/" class="button">
           Visit Site
