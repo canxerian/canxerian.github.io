@@ -30,7 +30,7 @@ const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
           </video>
         )
       }
-      {imageSrc && <Picture src={imageSrc} formats={["avif", "webp"]} alt={caption as string} />}
+      {imageSrc && <Image src={imageSrc} alt={caption as string} />}
     </div>
   </figure>
   {caption && <figcaption class="text-gray-500 text-sm">{caption}</figcaption>}
