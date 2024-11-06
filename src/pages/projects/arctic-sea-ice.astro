@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import vidArctic1 from "./arctic/arctic-vid-01.mp4";
 import vidArctic2 from "./arctic/arctic-vid-02.mp4";
 import vidArctic3 from "./arctic/arctic-vid-03.mp4";
+import vid2D3DBlender from "./arctic/arctic-2d-to-3d-blender.mp4";
 import "./project-page.css";
 ---
 
@@ -15,71 +16,84 @@ import "./project-page.css";
           <h1>Arctic Sea Ice</h1>
           <hr class="!bg-slate-500" />
           <p>A 3D visualiser of NASA's Arctic sea ice data</p>
-          <a href="https://canxerian.com/arctic-sea-ice/"
-            >https://canxerian.com/arctic-sea-ice</a
-          >
+          <a href="https://canxerian.com/arctic-sea-ice/">https://canxerian.com/arctic-sea-ice</a>
         </header>
         <section>
           <h2>Overview</h2>
+          <p>Each month, NASA captures satellite images showing the extent and volume of Arctic sea ice.</p>
           <p>
-            Each month, NASA captures satellite images showing the extent and
-            volume of Arctic sea ice.
-          </p>
-          <p>
-            I built a 3D visualiser using WebGL (BabylonJS) and React to quickly
-            assess trends and stories in that data
+            I built a 3D visualiser using WebGL (BabylonJS) and React to transform large volumes of data in to an easy
+            to understand 3D data visualiser, helping uncover trends and stories within.
           </p>
         </section>
       </section>
       <section>
-        <ProjectPageVideo src={vidArctic2} />
+        <ProjectPageVideo gradient="neutral-fuschia" videoSrc={vidArctic2} />
       </section>
 
       <section>
         <h2>Rationale</h2>
         <p>
-          These datasets are vast and complex, and navigating them can be
-          challenging—especially for those without specialized training or tools
-          to interpret the data effectively.
+          The datasets are large, complex. Navigating them can be challenging, especially for those without specialized
+          training or tools to interpret the data effectively.
         </p>
         <p>
-          While traditional visualizations like 2D graphs and charts are
-          helpful, they don't fully convey the spatial nature of Arctic sea ice
-          data.
+          While traditional visualizations like 2D graphs and charts are helpful, they don't fully convey the spatial
+          nature of Arctic sea ice data.
         </p>
         <p>
-          My goal is to experiment with a more immersive, 3D
-          visualization—almost like a game—to make this data more intuitive and
-          accessible.
+          My goal is to experiment with a more immersive, 3D visualization—almost like a game—to make this data more
+          intuitive and accessible.
         </p>
       </section>
       <section></section>
       <section>
         <h2>Technical Process</h2>
         <p>
-          The source dataset consists of two key elements: gradient-based images
-          representing ice distribution, and numerical values for ice extent and
-          volume. However, these elements are stored in multiple folders and
-          files, making comparisons time-consuming.
+          The source dataset consists of two key elements: gradient-based images representing ice distribution, and
+          numerical values for ice extent and volume. However, these elements are stored in multiple folders and files,
+          making comparisons time-consuming.
         </p>
         <p>
-          To streamline this, I transformed the data so it could be read quickly
-          in React. As users scroll, the relevant satellite image updates
-          instantanousely, allowing quick interrogation of large volumes of
-          data.
+          To streamline this, I transformed the data so it could be read quickly in React. As users scroll, the relevant
+          satellite image updates instantanousely, allowing quick interrogation of large volumes of data.
         </p>
       </section>
       <section></section>
       <section>
         <h2>2D to 3D transition</h2>
         <p>
-          The image (below) is used an input to a custom shader on the globe
-          model. Using the legend as a height look-up-table, I displace the
-          height along the globe’s normal vector, thus giving a 3D
+          In Blender, I model a sphere, import the sea ice extent texture, then use a shrinkwrap modifier to wrap it
+          tight against the surface of the sphere. The is used an input to a custom shader on the globe model. Using the
+          legend as a height look-up-table, I displace the height along the globe's normal vector, thus giving a 3D
           representation for sea ice concentration.
         </p>
+        <p>
+          The camera zoom is controlled by scrolling and when the maximum zoom is reached it transitions to a top down
+          view of the satellite image.
+        </p>
+        <p>Three things are controlled:</p>
+        <ul>
+          <li>1. Camera position</li>
+          <li>2. Camera zoom</li>
+          <li>3. Appearance of the plane (that renders the satellite image)</li>
+        </ul>
       </section>
-      <section></section>
+      <section>
+        <ProjectPageVideo
+          gradient="stone-blue"
+          caption="3D modelling the transition assets in Blender"
+          videoSrc={vid2D3DBlender}
+        />
+      </section>
+      <section>
+        <h2>Are the ice caps shrinking?</h2>
+        <p>
+          Let's now try and answer some questions using the data visualisation. I added some filters for yearly minimum
+          and maximums. We can see that indeed, the yearly minimum and maximum (the month in which the sea ice is
+          smallest and greatest) appear to trend downwards.
+        </p>
+      </section>
     </article>
   </main>
 </Layout>

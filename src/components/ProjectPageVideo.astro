@@ -1,18 +1,32 @@
 ---
+import { Gradients, type TGradient } from "./Gradients";
+
 interface Props {
-  src: string;
+  videoSrc?: string;
   aspect?: "square" | "video";
+  gradient: TGradient;
+  caption?: string;
 }
 
-const { src, aspect } = Astro.props;
+const { videoSrc, aspect, caption, gradient } = Astro.props;
+
+const gradientStyle = Gradients[gradient];
+
+const aspectSquare = aspect === "square" && "lg:aspect-square";
+const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
 ---
 
-<figure
-  class="rounded-md p-2 w-full aspect-square flex justify-center align-middle bg-gradient-to-r from-blue-600 to-violet-600"
->
-  <div class="overflow-hidden rounded-md self-center">
-    <video autoplay loop muted class="w-full">
-      <source src={src} type="video/mp4" />
-    </video>
-  </div>
-</figure>
+<div>
+  <figure class=`p-2 mb-1 w-full flex flex-col justify-center align-middle bg-gray-300 ${rounded} ${aspectSquare} ${gradientStyle}`>
+    <div class="overflow-hidden rounded-lg self-center">
+      {
+        videoSrc && (
+          <video autoplay loop muted class="w-full">
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        )
+      }
+    </div>
+  </figure>
+  {caption && <figcaption class="text-gray-500 text-sm">{caption}</figcaption>}
+</div>
