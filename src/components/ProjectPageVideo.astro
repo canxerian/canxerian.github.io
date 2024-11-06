@@ -1,5 +1,5 @@
 ---
-import { Image, Picture, type LocalImageProps } from "astro:assets";
+import { Image, type LocalImageProps } from "astro:assets";
 import { Gradients, type TGradient } from "./Gradients";
 
 interface Props {
@@ -30,6 +30,7 @@ const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
           </video>
         )
       }
+      
       {imageSrc && <Image src={imageSrc} alt={caption as string} />}
     </div>
   </figure>
