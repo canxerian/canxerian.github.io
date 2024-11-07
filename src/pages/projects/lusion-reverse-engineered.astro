@@ -2,6 +2,7 @@
 import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 import Layout from "../../layouts/Layout.astro";
 import vidLusion1 from "./lusion/lusion-vid-01.mp4";
+import vidLusion2 from "./lusion/lusion-no-canvas-compare-640x360-220kbps.mp4";
 import "./project-page.css";
 ---
 
@@ -18,6 +19,8 @@ import "./project-page.css";
             > by the renowned Lusion creative production studio.
           </p>
 
+          <p>3D assets, threejs rendering code, HTML/CSS, shaders made my me</p>
+
           <blockquote class="italic"></blockquote>
           <div class="border-l-4 border-gray-300 pl-6 py-2 text-gray-800 text-gray-600">
             <blockquote class="italic mb-4">
@@ -28,27 +31,34 @@ import "./project-page.css";
         </header>
       </section>
       <section><ProjectPageVideo videoSrc={vidLusion1} gradient="blue-rose" aspect="square" /></section>
-    </article>
-
-    <!-- <section>
+      <section>
         <h2>Rationale</h2>
         <p>I'm a curious being. When I see amazing work I can't help but wonder, how did they do that?</p>
         <p>
           And so I set myself a challenge: to recreate the lusion.co website, a website that seemingly defies what's
           possible with a browser.
         </p>
+        <p>
+          What I love about the site is how it seemlessly transitions from 2D to 3D. You begin feeling like it's a
+          regular website and then additional layers reveal that you're getting yourself in to something much more.
+        </p>
       </section>
+      <section></section>
       <section>
-        <h2>The process</h2>
+        <h2>Wait, so it's 3D?</h2>
+        <p>If you scroll, you'll notice that we have what seem like regular HTML blocks with some 3D content embedded. But then some 3D elements can move and animate between different boxes.</p>
+        <p>To achieve this, I have a full screen <code><canvas></code> <i>behind</i> our HTML</p>
       </section>
+      <section><ProjectPageVideo videoSrc={vidLusion2} gradient="purple-yellow" aspect="square" /></section>
       <section>
-        <h2>What I learned</h2>
+        <h2>Interactive physics</h2>
+        <p>First, I create some interesting lights</p>
       </section>
-      <a href="/" class="button">Back to projects</a>
+      <section></section>
+      <section>
+        <h2>Animation, mathematically</h2>
+        <p></p>
+      </section>
     </article>
-    <article class="right-side">
-      <figure class="w-full aspect-video bg-slate-500"></figure>
-      <figure class="w-full aspect-square bg-slate-500"></figure>
-    </article> -->
   </main>
 </Layout>

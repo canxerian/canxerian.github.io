@@ -4,7 +4,7 @@ import { Gradients, type TGradient } from "./Gradients";
 
 interface Props {
   videoSrc?: string;
-  imageSrc?: LocalImageProps['src'];
+  imageSrc?: LocalImageProps["src"];
   aspect?: "square" | "video";
   gradient?: TGradient;
   caption?: string;
@@ -19,10 +19,11 @@ const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
 ---
 
 <div>
+  <button></button>
   <figure
     class=`mb w-full flex flex-col justify-center align-middle bg-gray-300 ${rounded} ${aspectSquare} ${gradientStyle}`
   >
-    <div class="overflow-hidden rounded-lg self-center">
+    <div class="overflow-hidden rounded-lg self-center shadow-md w-full bg-black">
       {
         videoSrc && (
           <video autoplay loop muted class="w-full">
@@ -30,7 +31,6 @@ const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
           </video>
         )
       }
-      
       {imageSrc && <Image src={imageSrc} alt={caption as string} />}
     </div>
   </figure>
