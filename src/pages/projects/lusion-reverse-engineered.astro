@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import vidLusion1 from "./lusion/lusion-vid-01.mp4";
 import vidLusion2 from "./lusion/lusion-no-canvas-compare-640x360-220kbps.mp4";
 import vidLusionPhysics from "./lusion/lusion-physics-640x360-600kbps-640x360-300kbps.mp4";
+import vidLusionVertexAnim from "./lusion/lusion-vertex-anim-640x360-160kbps.mp4";
 import "./project-page.css";
 import Code from "astro/components/Code.astro";
 
@@ -72,7 +73,7 @@ const githubUrl = "https://github.com/canxerian/lusion-reverse-engineered";
           responsive manner.
         </p>
       </section>
-      <section><ProjectPageVideo videoSrc={vidLusion2} gradient="purple-yellow" aspect="square" /></section>
+      <section><ProjectPageVideo videoSrc={vidLusion2} gradient="purple-yellow" /></section>
       <section>
         <h2>Interactive physics</h2>
         <p>First, I create some interesting lights, model some spheres and apply a glossy material on it.</p>
@@ -102,7 +103,7 @@ const githubUrl = "https://github.com/canxerian/lusion-reverse-engineered";
         </p>
       </section>
       <section>
-        <ProjectPageVideo videoSrc={vidLusionPhysics} gradient="blue-rose" aspect="square" />
+        <ProjectPageVideo videoSrc={vidLusionPhysics} gradient="blue-rose" />
       </section>
       <section>
         <h2>Animation, mathematically</h2>
@@ -130,6 +131,9 @@ const githubUrl = "https://github.com/canxerian/lusion-reverse-engineered";
           You can think of these areas like masks that grow and shrink. I use these masks to determine which areas to
           affect by rotation, translation and scale.
         </p>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vidLusionVertexAnim} gradient="blue-rose" />
       </section>
     </article>
   </main>
