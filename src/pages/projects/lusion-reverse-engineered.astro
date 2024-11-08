@@ -3,13 +3,19 @@ import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 import Layout from "../../layouts/Layout.astro";
 import vidLusion1 from "./lusion/lusion-vid-01.mp4";
 import vidLusion2 from "./lusion/lusion-no-canvas-compare-640x360-220kbps.mp4";
+import vidLusionPhysics from "./lusion/lusion-physics-640x360-600kbps-640x360-300kbps.mp4";
 import "./project-page.css";
+import Code from "astro/components/Code.astro";
+
+const projectUrl = `${Astro.site}lusion-reverse-engineered`;
+const githubUrl = "https://github.com/canxerian/lusion-reverse-engineered";
 ---
 
 <Layout>
   <main class="project-content">
     <article>
       <section>
+        <date>September 2024</date>
         <header>
           <h1>Lusion, <br />reverse engineered</h1>
           <hr />
@@ -27,6 +33,10 @@ import "./project-page.css";
               One learns by doing the thing; for though you think you know it, you have no certainty until you try.
             </blockquote>
             <cite>- Sophocles</cite>
+          </div>
+          <div>
+            <a href={projectUrl}>{projectUrl}</a>
+            <a href={githubUrl}>{githubUrl}</a>
           </div>
         </header>
       </section>
@@ -46,18 +56,80 @@ import "./project-page.css";
       <section></section>
       <section>
         <h2>Wait, so it's 3D?</h2>
-        <p>If you scroll, you'll notice that we have what seem like regular HTML blocks with some 3D content embedded. But then some 3D elements can move and animate between different boxes.</p>
-        <p>To achieve this, I have a full screen <code><canvas></code> <i>behind</i> our HTML</p>
+        <p>
+          If you scroll, you'll notice that we have what seem like regular HTML blocks with some 3D content embedded.
+          But then some 3D elements can move and animate between different boxes.
+        </p>
+        <p>
+          To achieve this, I have a full screen <Code code="<canvas>" lang="html" inline />
+          <i>behind</i> our HTML, as demonstrated in the video.
+        </p>
+        <br />
+        <h2>Mapping HTML to 3D positions</h2>
+        <p>
+          Positions are defined using HTML flex/grid layout (it's much nicer than doing it in a 3d engine!). I then
+          calculate a screen-position-to-world coordinate, thus enabling pixel perfect positioning of 3D objects in a
+          responsive manner.
+        </p>
       </section>
       <section><ProjectPageVideo videoSrc={vidLusion2} gradient="purple-yellow" aspect="square" /></section>
       <section>
         <h2>Interactive physics</h2>
-        <p>First, I create some interesting lights</p>
+        <p>First, I create some interesting lights, model some spheres and apply a glossy material on it.</p>
+        <p>
+          I use <a href="https://rapier.rs/docs/user_guides/javascript/getting_started_js/">Rapier.js</a> for physics track
+          a collider to the mouse position.
+        </p>
+        <p>An attractive force is applied, giving the balls a gravitional pull to the center.</p>
+        <p>
+          The results were lacklustre to begin with, but with some custom code to add an additional impulse force,
+          thereby making the relatively small mouse movements much larger and more powerful. With that, we have a rather
+          fun ball smasher.
+        </p>
+        <p>
+          Finally a procedurally generated mesh with rounded corners is rendered before the balls, which writes to the
+          stencil buffer.
+        </p>
+        <p>
+          The balls do a stencil test, thus enabling me to mask off an area, giving the impression of a window in to the
+          ball pit world.
+        </p>
+        <p>
+          You can view the source code here: <a
+            href="https://github.com/canxerian/lusion-reverse-engineered/blob/main/src/physicsSandbox.js"
+            >physicsSandbox.js</a
+          >
+        </p>
       </section>
-      <section></section>
+      <section>
+        <ProjectPageVideo videoSrc={vidLusionPhysics} gradient="blue-rose" aspect="square" />
+      </section>
       <section>
         <h2>Animation, mathematically</h2>
-        <p></p>
+        <p>
+          Now this effect, had me really stumped. It took me approximately 7 attempts to mimic this seemingly simple
+          animation of a mesh dancing and becoming a larger version of itself.
+        </p>
+        <p>
+          I tried mesh deformations, animating it in Blender, applying springs to the bones and numerous others
+          techniques. In the end, I coded the animation entirely mathematically, using a custom vertex shader.
+        </p>
+        <p>
+          In the vertex shader, I drive the entire animation using a single value that goes from 0 to 1. Let's call this <Code
+            code="animateProgress"
+            lang="glsl"
+            inline
+          />.
+        </p>
+        <p>
+          I then determine areas of the mesh that I'd like to affect using its <Code code="uv" lang="glsl" inline /> coordinates
+          and the
+          <Code code="animateProgress" lang="glsl" inline /> value.
+        </p>
+        <p>
+          You can think of these areas like masks that grow and shrink. I use these masks to determine which areas to
+          affect by rotation, translation and scale.
+        </p>
       </section>
     </article>
   </main>

@@ -30,6 +30,8 @@ main.project-content {
   }
 
   a {
+    @apply text-slate-600;
+
     &:hover {
       @apply underline underline-offset-2;
     }
