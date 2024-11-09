@@ -1,41 +1,63 @@
 ---
+import vid01 from "./mr-remoting-unity/mr-remoting-01-400x400-240kbps.mp4";
+import vidSolution from "./mr-remoting-unity/mr-remoting-solution-640x360-240kbps.mp4";
 import Layout from "../../layouts/Layout.astro";
 import "./project-page.css";
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
 ---
 
 <Layout>
   <main class="project-content">
-    <article class="left-side">
-      <header>
-        <h1>Mixed Reality Remoting for Unity</h1>
-        <hr />
-        <p>Unity tooling to preview and recording HoloLens apps in 4K</p>
-      </header>
+    <article>
       <section>
-        <h2>Overview</h2>
+        <header>
+          <time>July 2023</time>
+          <h1>Mixed Reality Mobile Remoting for Unity</h1>
+          <hr />
+          <p>A Unity plugin to record HoloLens apps in 4K from a third person point of view.</p>
+          <p><b>My role:</b> Designer, Developer.</p>
+          <a href="https://github.com/microsoft/Mixed-Reality-Remoting-Unity"
+            >https://github.com/microsoft/Mixed-Reality-Remoting-Unity</a
+          >
+        </header>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vid01} aspect="square" gradient="purple-yellow" />
+      </section>
+      <section>
+        <h2>The problem</h2>
         <p>
-          Cuddlebook is a mobile app created from a personal desire to teach my
-          children my second languages (Cantonese).
+          HoloLens developers capture recordings of apps for app store listings, marketing videos and to share their
+          creations with the world.
         </p>
         <p>
-          The app is filled with short stories, perfect for any time of day,
-          especially as part of a bedtime routine.
-        </p>
-        <p>
-          It features AI-powered text-to-speech to help both parent and child
-          learn the correct pronunciation of any given word or phrase.
+          The recommended method makes use of the onboard HoloLens camera, however, the footage can be shaky (as the
+          device cannot be placed on a tripod), the field of view is often too narrow and framing the shot for
+          professional results is almost impossible.
         </p>
       </section>
       <section>
-        <h2>Technical</h2>
-        <p>Built with React Native.</p>
-        <p>Designed, developed and published independently by me.</p>
+        <ProjectPageVideo
+          gradient="neutral-fuschia"
+          youtubeSrc="https://www.youtube-nocookie.com/embed/cILD0NBgFjE?si=LjRxkwWM9PTg_aK7&start=233"
+          caption="Mixed Reality Captures uses the HoloLens' onboard camera and footage is often shaky with a narrow field-of-view"
+        />
       </section>
-      <a href="/" class="button"> Back to projects </a>
-    </article>
-    <article class="right-side">
-      <figure class="w-full aspect-video bg-slate-500"></figure>
-      <figure class="w-full aspect-square bg-slate-500"></figure>
+      <section>
+        <h2>The solution</h2>
+        <p>
+          I built a companion mobile app that acts as a window in to the holographic world. It then records the regular
+          camera feed (from the rear facing camera) with the holograms composited on top.
+        </p>
+        <p>
+          The camera feed and holographic app feeds can be recorded as separate files for greater video editing
+          fidelity.
+        </p>
+        <p>The result is a recording of a HoloLens experience from a third person point of view.</p>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vidSolution} aspect="square" gradient="purple-yellow" controls />
+      </section>
     </article>
   </main>
 </Layout>
