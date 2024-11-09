@@ -31,7 +31,7 @@ const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
           </video>
         )
       }
-      {imageSrc && <Image src={imageSrc} alt={caption as string} />}
+      {imageSrc && <Image src={imageSrc} alt={caption ? caption as string : "Project image"} />}
       {
         youtubeSrc && (
           <iframe

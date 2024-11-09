@@ -1,0 +1,108 @@
+---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import Layout from "../../layouts/Layout.astro";
+import imgAttractor from "./dreamglass/dreamglass-attractor.png";
+import vidHero from "./dreamglass/dreamglass-hero-640x360-420kbps.mp4";
+import vidInput from "./dreamglass/dreamglass-input-640x360-240kbps.mp4";
+import vidPoseAssessment1 from "./dreamglass/dreamglass-kinect-prototype-296x344-160kbps.mp4";
+import vidPointCloudMirror from "./dreamglass/dreamglass-mirror-point-cloud-640x360-240kbps.mp4";
+import vidPoseAssessment2 from "./dreamglass/dreamglass-pose-assessment-640x360-100kbps.mp4";
+import imgPoses from "./dreamglass/dreamglass-poses.png";
+import "./project-page.css";
+---
+
+<Layout>
+  <main class="project-content">
+    <article>
+      <section>
+        <header>
+          <time>November 2021</time>
+          <h1>Dreamglass by Mattress Firm</h1>
+          <hr class="!bg-red-300" />
+          <p>A fun interactive experience to create intrigue made by Microsoft for Mattress Firm.</p>
+          <p>Showcased at the LA Car Show 2021 and Houston Rodeo 2022.</p>
+          <p>Made with Unity and Azure Kinect</p>
+          <p><b>My role:</b> User experience design, Unity development and body tracking data processing</p>
+        </header>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vidHero} aspect="square" gradient="stone-blue" />
+      </section>
+      <section>
+        <h2>Experience overview</h2>
+        <p>
+          The experience was deployed at trade shows and exhibtions. Members of the public were invited to participate,
+          providing a focal point and allowing potential customers to engage with the brand.
+        </p>
+        <p>
+          The experience involved asking users to make postures which are analysed using body tracking algorithms,
+          courtesy of the Azure Kinect.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo imageSrc={imgPoses} gradient="neutral-fuschia" caption="Dreamglass experience - poses" />
+      </section>
+      <section>
+        <h2>Working with the Azure Kinect</h2>
+        <p>
+          The Azure Kinect device provides poses of 32 joints in the skeleton. Specific joints of interest are used to
+          calculate joint angles using vector arithmetic.
+        </p>
+        <p>
+          For example, during a T-pose, the neck, shoulder, elbow and wrist joints form a picture of the angle from
+          shoulder to torso. This information is compared with opposing side of the body for discrepancies.
+        </p>
+        <p>
+          I iterated through several ideas on how to provide a user with a pose assessment. I worked with Mattress
+          Firm's innovation team and used their physio's recommendations on making localised angle comparisons between
+          bones and joints.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vidPoseAssessment2} gradient="purple-yellow" />
+        <ProjectPageVideo videoSrc={vidPoseAssessment1} gradient="purple-yellow" />
+      </section>
+      <section>
+        <h2>Working with the magic mirror</h2>
+        <p>
+          As your reflection features heavily in the experience, a mirror was a natural fit. For kerb appeal, the mirror
+          + Kinect combi offers a novel experience for users (members of the public). On the technical side, for
+          providing visual feedback on your current pose, the speed of light beats a USB camera (Azure Kinect).
+        </p>
+        <p>
+          There were design considerations around using the mirror, however. Such as lining up the reflection with the
+          UI, deciding where to draw the user's focus and rendering that would compliment a variety of lighting
+          conditions. Unlike an LCD screen, we can't display black.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vidPointCloudMirror} gradient="blue-rose" />
+      </section>
+      <section>
+        <h2>User input</h2>
+        <p>
+          The experience was used in public settings and to maximise accessibility, there are no peripheral devices
+          required.
+        </p>
+        <p>So how does the user navigate the experience?</p>
+        <p>
+          The Azure Kinect has a depth sensor, so we know far the user is. When the user stands between a certain
+          distance away we can start the experience
+        </p>
+        <p>
+          There are moments that require binary input - for this we can ask the user to raise their left or right hand.
+          In code, that's a simple dot product calculation between the left/right arm joints and a
+          Vector.left/Vector.right.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vidInput} gradient="purple-yellow" />
+        <ProjectPageVideo
+          imageSrc={imgAttractor}
+          gradient="purple-yellow"
+          caption="Experience initation attractor by using body distance from Kinect sensor"
+        />
+      </section>
+    </article>
+  </main>
+</Layout>
