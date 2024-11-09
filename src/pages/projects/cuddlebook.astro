@@ -1,0 +1,63 @@
+---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import Layout from "../../layouts/Layout.astro";
+import cuddlebookImg1 from "./cuddlebook/cuddlebook-img-01.png";
+import cuddlebookImg2 from "./cuddlebook/cuddlebook-img-02.png";
+import cuddlebookImg3 from "./cuddlebook/cuddlebook-img-03.png";
+import cuddlebookVid from "./cuddlebook/cuddlebook-vid-02-640x360-600kbps.mp4";
+import "./project-page.css";
+---
+
+<Layout>
+  <main class="project-content">
+    <article>
+      <section>
+        <header>
+          <time>June 2023</time>
+          <h1>Cuddlebook</h1>
+          <hr />
+          <p>An app for bilingual families to read stories together</p>
+          <p>Designed, developed, written and published independently by me.</p>
+        </header>
+        <section>
+          <h2>Overview</h2>
+          <p>
+            Cuddlebook is a mobile app created from a personal desire to teach my children my second languages
+            (Cantonese).
+          </p>
+          <p>
+            The app is filled with short stories, perfect for any time of day, especially as part of a bedtime routine.
+          </p>
+          <p>
+            It features AI-powered text-to-speech to help both parent and child learn the correct pronunciation of any
+            given word or phrase.
+          </p>
+        </section>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={cuddlebookVid} />
+      </section>
+      <section>
+        <h2>Technical</h2>
+        <p>
+          The app is built with Expo React Native and uses
+          <a href="https://reactnativeelements.com/docs">React Native Elements</a> for UI components.
+        </p>
+        <p>The stories themselves are written, however, there's the offline translation process uses ChatGPT.</p>
+        <p>
+          The decision to translate offline means the translations can undergo QA (which is outsourced) before committed
+          to the app source code.
+        </p>
+        <p>
+          The text-to-speech backend is implemented as an Azure Functions app, with a custom caching layer. I gathered
+          that there would be sporadic use, hence the "severless" backend to keep cost and maintenance down.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo imageSrc={cuddlebookImg1} caption="Pre-release poster" />
+        <ProjectPageVideo imageSrc={cuddlebookImg2} caption="Multiple language support" />
+        <ProjectPageVideo imageSrc={cuddlebookImg3} caption="Multiple language support" />
+      </section>
+    </article>
+  </main>
+</Layout>

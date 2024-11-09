@@ -1,0 +1,52 @@
+---
+import { Image, type LocalImageProps } from "astro:assets";
+import { Gradients, type TGradient } from "./Gradients";
+
+interface Props {
+  videoSrc?: string;
+  imageSrc?: LocalImageProps["src"];
+  youtubeSrc?: string;
+  aspect?: "square" | "video";
+  gradient?: TGradient;
+  caption?: string;
+  controls?: boolean;
+}
+
+const { videoSrc, imageSrc, youtubeSrc, aspect, caption, gradient, controls = false } = Astro.props;
+
+const bgStyle = gradient ? `${Gradients[gradient]}` : "bg-gray-300";
+
+const aspectSquare = aspect === "square" && "lg:aspect-square";
+const rounded = aspect === "square" ? "rounded-md" : "rounded-lg";
+---
+
+<div>
+  <button></button>
+  <figure class=`mb w-full flex flex-col justify-center align-middle p-2 ${rounded} ${aspectSquare} ${bgStyle}`>
+    <div class="overflow-hidden rounded-lg self-center shadow-md w-full bg-black">
+      {
+        videoSrc && (
+          <video autoplay loop muted class="w-full" controls={controls}>
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        )
+      }
+      {imageSrc && <Image src={imageSrc} alt={caption ? caption as string : "Project image"} />}
+      {
+        youtubeSrc && (
+          <iframe
+            class="aspect-video"
+            width="100%"
+            src={youtubeSrc}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          />
+        )
+      }
+      <slot />
+    </div>
+  </figure>
+  {caption && <figcaption class="text-gray-500 text-sm">{caption}</figcaption>}
+</div>

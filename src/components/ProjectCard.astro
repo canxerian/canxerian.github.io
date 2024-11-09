@@ -1,0 +1,45 @@
+---
+import { Image, type LocalImageProps } from "astro:assets";
+
+interface Props {
+  videoSrc?: string;
+  imageSrc?: LocalImageProps["src"];
+  imageAlt?: string;
+  title: string;
+  href: string;
+}
+
+const props = Astro.props;
+
+const gradients = [
+  "bg-gradient-to-br from-blue-300 to-rose-300",
+  "bg-gradient-to-tr from-purple-500 to-yellow-700",
+  "bg-gradient-to-br from-stone-300 to-red-300",
+  "bg-gradient-to-tl from-neutral-200 to-fuchsia-200",
+];
+const randomIndex = Math.floor(Math.random() * gradients.length);
+const gradient = gradients[randomIndex];
+---
+
+<article>
+  <a href={props.href} class=`relative block rounded-xl w-full aspect-video overflow-hidden group ${gradient}`>
+    {
+      props.videoSrc && (
+        <video autoplay loop muted class="w-full group-hover:scale-[105%] transition-transform duration-1000">
+          <source src={props.videoSrc} type="video/mp4" />
+        </video>
+      )
+    }
+    {props.imageSrc && <Image class="object-cover !max-w-full !max-h-full group-hover:scale-[103%] transition-transform duration-1000" src={props.imageSrc} alt={props.imageAlt as string} />}
+
+    <div
+      class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 group-hover:bg-opacity-0 transition-all duration-300"
+    >
+      <p
+        class="text-xl text-center p-4 whitespace-nowrap text-white opacity-100 group-hover:tracking-wide group-hover:opacity-0 transition-all duration-[1200ms]"
+      >
+        {props.title}
+      </p>
+    </div>
+  </a>
+</article>

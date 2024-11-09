@@ -1,0 +1,30 @@
+---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import Layout from "../../layouts/Layout.astro";
+import imgHero from "./as3/hero.jpg";
+import "./project-page.css";
+---
+
+<Layout>
+  <main class="project-content">
+    <article>
+      <section>
+        <header>
+          <time>August 2013</time>
+          <h1>Amateur Surgeon 3</h1>
+          <hr />
+          <p>
+            Amateur Surgeon 3 is a mobile game where players play as a novice surgeon, performing bizarre and
+            over-the-top medical procedures on a variety of eccentric patients using unconventional tools.
+          </p>
+          <p><b>My role:</b> Gameplay programmer</p>
+          <p>I helped create gameplay mechanics, implement UI designs and iterate on user feedback.</p>
+          <p>The game was created using an in-house fork on the Cocos-2d game engine, which I helped maintain.</p>
+        </header>
+      </section>
+      <section>
+        <ProjectPageVideo imageSrc={imgHero} aspect="square" gradient="blue-rose" />
+      </section>
+    </article>
+  </main>
+</Layout>
