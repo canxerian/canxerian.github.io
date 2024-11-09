@@ -7,6 +7,7 @@ import vidLusion from "./projects/lusion/lusion-vid-01.mp4";
 import vidMrRemotingUnity from "./projects/mr-remoting-unity/mr-remoting-01-400x400-240kbps.mp4";
 import vidDreamglass from "./projects/dreamglass/dreamglass-hero-640x360-220kbps.mp4";
 import imgCsr2 from "./projects/csr2/hero.jpeg";
+import imgAs3 from "./projects/as3/hero.jpg";
 import imgDeliveryOutlaw from "./projects/delivery-outlaw/hero.jpg";
 
 console.log(JSON.stringify(imgCsr2));
@@ -29,13 +30,23 @@ console.log(JSON.stringify(imgCsr2));
 				videoSrc={vidMrRemotingUnity}
 				href="/projects/mixed-reality-remoting-for-unity"
 			/>
-			<ProjectCard title="Triosa" href="/projects/triosa" />
+			<!-- <ProjectCard title="Triosa" href="/projects/triosa" /> -->
 			<ProjectCard title="Dreamglass" videoSrc={vidDreamglass} href="/projects/dreamglass" />
-			<ProjectCard title="Equinor - Wind Farm Planner" href="/projects/equinor-wind-farm-planner" />
-			<ProjectCard title="Aflac - Knowing Cancer" href="/projects/aflac-knowing-cancer" />
+			<!-- <ProjectCard title="Equinor - Wind Farm Planner" href="/projects/equinor-wind-farm-planner" /> -->
+			<!-- <ProjectCard title="Aflac - Knowing Cancer" href="/projects/aflac-knowing-cancer" /> -->
 			<ProjectCard title="CSR Racing 2" imageSrc={imgCsr2} imageAlt="CSR Racing 2" href="/projects/csr-racing-2" />
-			<ProjectCard title="Amateur Surgeon 3" href="/projects/amateur-surgeon-3" />
-			<ProjectCard title="Delivery Outlaw" imageSrc={imgDeliveryOutlaw} imageAlt="Delivery Outlaw" href="/projects/delivery-outlaw" />
+			<ProjectCard
+				title="Amateur Surgeon 3"
+				imageSrc={imgAs3}
+				imageAlt="Amateur Surgeon 3"
+				href="/projects/amateur-surgeon-3"
+			/>
+			<ProjectCard
+				title="Delivery Outlaw"
+				imageSrc={imgDeliveryOutlaw}
+				imageAlt="Delivery Outlaw"
+				href="/projects/delivery-outlaw"
+			/>
 		</div>
 	</section>
 </Layout>
