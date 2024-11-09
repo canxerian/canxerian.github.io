@@ -1,6 +1,10 @@
 ---
+import { Image, type LocalImageProps } from "astro:assets";
+
 interface Props {
   videoSrc?: string;
+  imageSrc?: LocalImageProps["src"];
+  imageAlt?: string;
   title: string;
   href: string;
 }
@@ -26,6 +30,8 @@ const gradient = gradients[randomIndex];
         </video>
       )
     }
+    {props.imageSrc && <Image class="object-cover !max-w-full !max-h-full group-hover:scale-[103%] transition-transform duration-1000" src={props.imageSrc} alt={props.imageAlt as string} />}
+
     <div
       class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 group-hover:bg-opacity-0 transition-all duration-300"
     >

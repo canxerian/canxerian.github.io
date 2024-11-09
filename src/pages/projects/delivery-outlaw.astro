@@ -1,0 +1,40 @@
+---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import Layout from "../../layouts/Layout.astro";
+import imgHero from "./delivery-outlaw/hero.jpg";
+import "./project-page.css";
+---
+
+<Layout>
+  <main class="project-content">
+    <article>
+      <section>
+        <header>
+          <time>July 2014</time>
+          <h1>Delivery Outlaw</h1>
+          <hr />
+          <p>
+            Delivery Outlaw is a mobile game where players make risky deliveries, driving through rough terrain and
+            dodging obstacles to complete each mission.
+          </p>
+          <p><b>My role:</b> Gameplay programmer.</p>
+          <p>
+            As a programmer on Delivery Outlaw, I was responsible for developing core gameplay mechanics, including
+            vehicle handling, obstacle interactions, and mission-based objectives.
+          </p>
+          <p>
+            I collaborated with designers to implement challenges and interesting levels, enhancing the game's appeal
+            and replayability.
+          </p>
+          <p>
+            Additionally, I optimized the game's performance across various mobile devices, ensuring smooth gameplay and
+            minimal load times for a wide audience.
+          </p>
+        </header>
+      </section>
+      <section>
+        <ProjectPageVideo imageSrc={imgHero} gradient="neutral-fuschia" />
+      </section>
+    </article>
+  </main>
+</Layout>

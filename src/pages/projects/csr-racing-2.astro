@@ -1,0 +1,40 @@
+---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import Layout from "../../layouts/Layout.astro";
+import imgHero from "./csr2/hero.jpeg";
+import "./project-page.css";
+---
+
+<Layout>
+  <main class="project-content">
+    <article>
+      <section>
+        <header>
+          <time>June 2016</time>
+          <h1>CSR Racing 2</h1>
+          <hr />
+          <p>
+            Car Racing 2 is a fast-paced, high-adrenaline competitive mobile racing game developed by NaturalMotion
+            Games.
+          </p>
+          <p><b>My role:</b> Lead programmer</p>
+          <p>
+            I led a small team of programmers on CSR2, overseeing the development and implementation of core game
+            features while ensuring code quality and meeting project deadlines.
+          </p>
+          <p>
+            In addition, I contributed directly to coding features such as car customization options and crate drops.
+          </p>
+          <p>
+            I also had the opportunity to collaborate closely with the graphics programmer and technical artist, through
+            whom I gained valuable experience in coding visual effects using shaders.
+          </p>
+          <p>Working on this project sparked a strong interest in shaders and graphics programming.</p>
+        </header>
+      </section>
+      <section>
+        <ProjectPageVideo imageSrc={imgHero} aspect="square" gradient="neutral-fuschia" />
+      </section>
+    </article>
+  </main>
+</Layout>
