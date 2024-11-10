@@ -11,7 +11,8 @@ import { ViewTransitions } from "astro:transitions";
 		<meta name="author" content="Mark Nguyen" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Canxerian aka mark nguyen</title>
-		<script defer data-domain="canxerian.com" src="https://plausible.uksouth.cloudapp.azure.com/js/script.js"></script>
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="b0b2c49f-1535-485c-8914-82b1bbacb564"
+		></script>
 		<ViewTransitions />
 	</head>
 	<body>
@@ -21,6 +22,22 @@ import { ViewTransitions } from "astro:transitions";
 			</a>
 		</nav>
 		<slot />
+		<script>
+			const bar = "=====================================================";
+			const msg = `${bar}
+Hey 👋
+
+Wanna go behind the scenes? The site is open source! 
+
+https://github.com/canxerian/canxerian.github.io
+
+Cheers,
+Mark
+
+${bar}
+`;
+			console.log(msg);
+		</script>
 	</body>
 </html>
 <style is:global>
