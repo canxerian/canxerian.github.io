@@ -28,16 +28,4 @@ main.project-content {
   header {
     @apply flex flex-col gap-4 mb-12;
   }
-
-  a {
-    @apply text-slate-600;
-
-    &:hover {
-      @apply underline underline-offset-2;
-    }
-
-    &.button {
-      @apply no-underline self-start text-white p-4 rounded bg-gradient-to-r from-purple-800 to-fuchsia-800 hover:from-purple-950 hover:to-fuchsia-950;
-    }
-  }
 }
