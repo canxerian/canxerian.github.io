@@ -1,6 +1,4 @@
 main.project-content {
-  @apply flex flex-col gap-y-20;
-
   h1 {
     @apply text-6xl;
   }

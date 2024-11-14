@@ -52,20 +52,24 @@ ${bar}
 			@apply w-full max-w-[1200px] m-auto min-h-screen flex flex-col gap-16 pt-2 pb-12 px-8;
 		}
 
+		main {
+			@apply flex flex-col gap-y-20;
+
+			a {
+				@apply font-hg text-slate-500;
+
+				&:hover {
+					@apply underline underline-offset-4;
+				}
+			}
+		}
+
 		h1 {
 			@apply font-hg text-3xl;
 		}
 
 		h2 {
 			@apply font-hg text-sm;
-		}
-
-		a {
-			@apply font-hg text-slate-600;
-
-			&:hover {
-				@apply underline underline-offset-4;	
-			}
 		}
 	}
 </style>
