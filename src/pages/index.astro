@@ -9,54 +9,89 @@ import vidDreamglass from "./projects/dreamglass/dreamglass-hero-640x360-220kbps
 import imgCsr2 from "./projects/csr2/hero.jpeg";
 import imgAs3 from "./projects/as3/hero.jpg";
 import imgDeliveryOutlaw from "./projects/delivery-outlaw/hero.jpg";
+
+const blogLinks = [
+	{
+		title: "How Do Stencil Shaders Work?",
+		link: "https://medium.com/@mgb.nguyen/how-do-stencil-shaders-work-e2d46b27b737",
+	},
+	{
+		title: "Unity Stencil Shaders are perfect for making out-of-this world AR experiences",
+		link: "https://medium.com/@mgb.nguyen/unity-stencil-shaders-are-perfect-for-making-out-of-this-world-ar-experiences-cfd9679404ca",
+	},
+	{
+		title: "Improve Your Unity AR With These Four Techniques",
+		link: "https://medium.com/@mgb.nguyen/improve-your-unity-ar-apps-with-these-4-techniques-c0f47a098a94",
+	},
+	{
+		title: "Aligning Realities - How To Create XR Shared Experiences",
+		link: "https://medium.com/@mgb.nguyen/aligning-realities-how-to-create-xr-shared-experiences-2ace580b827b",
+	},
+];
 ---
 
 <Layout>
 	<main>
-	<section class="flex flex-col gap-4">
-		<h2 class="tracking-[0.8rem]">ABOUT</h2>
-		<!-- <p>
+		<section class="flex flex-col gap-4">
+			<h2 class="tracking-[0.8rem]">ABOUT</h2>
+			<!-- <p>
 			I'm currently helping businesses automate mundane tasks with <a href="https://llume.co">https://llume.co</a>
 		</p> -->
-		<p>
-			I've 14 years experience as a professional software engineer working on complex, differentiated, 3D immersive
-			projects.
-		</p>
-		<p>
-			I was previously a software engineer at Microsoft (7 years), NaturalMotion/Zynga (3 years), Amazon (0.5 years), Mediatonic/Epic
-			Games (2.5 years) and Axisto Media (1 year).
-		</p>
-	</section>
-	<section class="flex flex-col gap-4">
-		<h2 class="tracking-[0.8rem]">PROJECTS</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-			<!-- <div class="flex flex-col gap-20"> -->
-			<ProjectCard title="Cuddlebook" videoSrc={vidCuddlebook} href="/projects/cuddlebook" />
-			<ProjectCard title="Arctic Sea Ice" videoSrc={vidArctic} href="/projects/arctic-sea-ice" />
-			<ProjectCard title="Lusion, reverse engineered" videoSrc={vidLusion} href="/projects/lusion-reverse-engineered" />
-			<ProjectCard
-				title="Mixed Reality Remoting for Unity"
-				videoSrc={vidMrRemotingUnity}
-				href="/projects/mixed-reality-remoting-for-unity"
-			/>
-			<!-- <ProjectCard title="Triosa" href="/projects/triosa" /> -->
-			<ProjectCard title="Dreamglass" videoSrc={vidDreamglass} href="/projects/dreamglass" />
-			<!-- <ProjectCard title="Equinor - Wind Farm Planner" href="/projects/equinor-wind-farm-planner" /> -->
-			<!-- <ProjectCard title="Aflac - Knowing Cancer" href="/projects/aflac-knowing-cancer" /> -->
-			<ProjectCard title="CSR Racing 2" imageSrc={imgCsr2} imageAlt="CSR Racing 2" href="/projects/csr-racing-2" />
-			<ProjectCard
-				title="Amateur Surgeon 3"
-				imageSrc={imgAs3}
-				imageAlt="Amateur Surgeon 3"
-				href="/projects/amateur-surgeon-3"
-			/>
-			<ProjectCard
-				title="Delivery Outlaw"
-				imageSrc={imgDeliveryOutlaw}
-				imageAlt="Delivery Outlaw"
-				href="/projects/delivery-outlaw"
-			/>
-		</div>
-	</section>
-</main>
+			<p>
+				I've 14 years experience as a professional software engineer working on complex, differentiated, 3D immersive
+				projects.
+			</p>
+			<p>
+				I was previously a software engineer at Microsoft (7 years), NaturalMotion/Zynga (3 years), Amazon (0.5 years),
+				Mediatonic/Epic Games (2.5 years) and Axisto Media (1 year).
+			</p>
+		</section>
+		<section class="flex flex-col gap-4">
+			<h2 class="tracking-[0.8rem]">PROJECTS</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<!-- <div class="flex flex-col gap-20"> -->
+				<ProjectCard title="Cuddlebook" videoSrc={vidCuddlebook} href="/projects/cuddlebook" />
+				<ProjectCard title="Arctic Sea Ice" videoSrc={vidArctic} href="/projects/arctic-sea-ice" />
+				<ProjectCard
+					title="Lusion, reverse engineered"
+					videoSrc={vidLusion}
+					href="/projects/lusion-reverse-engineered"
+				/>
+				<ProjectCard
+					title="Mixed Reality Remoting for Unity"
+					videoSrc={vidMrRemotingUnity}
+					href="/projects/mixed-reality-remoting-for-unity"
+				/>
+				<!-- <ProjectCard title="Triosa" href="/projects/triosa" /> -->
+				<ProjectCard title="Dreamglass" videoSrc={vidDreamglass} href="/projects/dreamglass" />
+				<!-- <ProjectCard title="Equinor - Wind Farm Planner" href="/projects/equinor-wind-farm-planner" /> -->
+				<!-- <ProjectCard title="Aflac - Knowing Cancer" href="/projects/aflac-knowing-cancer" /> -->
+				<ProjectCard title="CSR Racing 2" imageSrc={imgCsr2} imageAlt="CSR Racing 2" href="/projects/csr-racing-2" />
+				<ProjectCard
+					title="Amateur Surgeon 3"
+					imageSrc={imgAs3}
+					imageAlt="Amateur Surgeon 3"
+					href="/projects/amateur-surgeon-3"
+				/>
+				<ProjectCard
+					title="Delivery Outlaw"
+					imageSrc={imgDeliveryOutlaw}
+					imageAlt="Delivery Outlaw"
+					href="/projects/delivery-outlaw"
+				/>
+			</div>
+		</section>
+		<section class="flex flex-col gap-4">
+			<h2 class="tracking-[0.8rem]">BLOG</h2>
+			<ul>
+				{
+					blogLinks.map((blog) => (
+						<li>
+							<a href={blog.link}>{blog.title}</a>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
 </Layout>
