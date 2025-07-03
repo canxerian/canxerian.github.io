@@ -6,6 +6,7 @@ import vidCuddlebook from "./projects/cuddlebook/cuddlebook-vid-01-640x360-600kb
 import vidLusion from "./projects/lusion/lusion-vid-01.mp4";
 import vidMrRemotingUnity from "./projects/mr-remoting-unity/mr-remoting-01-400x400-240kbps.mp4";
 import vidDreamglass from "./projects/dreamglass/dreamglass-hero-640x360-220kbps.mp4";
+import vidEquinor from "./projects/equinor/equinor-project-thumb-960x540-1500kbps.mp4";
 import imgCsr2 from "./projects/csr2/hero.jpeg";
 import imgAs3 from "./projects/as3/hero.jpg";
 import imgDeliveryOutlaw from "./projects/delivery-outlaw/hero.jpg";
@@ -34,16 +35,16 @@ const blogLinks = [
 	<main>
 		<section class="flex flex-col gap-4">
 			<h2 class="tracking-[0.8rem]">ABOUT</h2>
-			<!-- <p>
-			I'm currently helping businesses automate mundane tasks with <a href="https://llume.co">https://llume.co</a>
-		</p> -->
 			<p>
-				I've 14 years experience as a professional software engineer working on complex, differentiated, 3D immersive
-				projects.
+				I've 15 years experience as a professional software engineer working on complex, differentiated, 3D
+				immersive projects.
 			</p>
 			<p>
 				I was previously a software engineer at Microsoft (7 years), NaturalMotion/Zynga (3 years), Amazon (0.5 years),
 				Mediatonic/Epic Games (2.5 years) and Axisto Media (1 year).
+			</p>
+			<p>
+				I now run a design & development agency: <a href="https://llume.co">https://llume.co</a>
 			</p>
 		</section>
 		<section class="flex flex-col gap-4">
@@ -64,9 +65,19 @@ const blogLinks = [
 				/>
 				<!-- <ProjectCard title="Triosa" href="/projects/triosa" /> -->
 				<ProjectCard title="Dreamglass" videoSrc={vidDreamglass} href="/projects/dreamglass" />
-				<!-- <ProjectCard title="Equinor - Wind Farm Planner" href="/projects/equinor-wind-farm-planner" /> -->
+				<ProjectCard
+					title="Equinor - Wind Farm Planner"
+					videoSrc={vidEquinor}
+					href="/projects/equinor-wind-farm-planner"
+				/>
 				<!-- <ProjectCard title="Aflac - Knowing Cancer" href="/projects/aflac-knowing-cancer" /> -->
 				<ProjectCard title="CSR Racing 2" imageSrc={imgCsr2} imageAlt="CSR Racing 2" href="/projects/csr-racing-2" />
+				<ProjectCard
+					title="Amateur Surgeon 3"
+					imageSrc={imgAs3}
+					imageAlt="Amateur Surgeon 3"
+					href="/projects/amateur-surgeon-3"
+				/>
 				<ProjectCard
 					title="Amateur Surgeon 3"
 					imageSrc={imgAs3}

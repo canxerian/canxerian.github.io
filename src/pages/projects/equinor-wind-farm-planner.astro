@@ -1,0 +1,89 @@
+---
+import ProjectPageVideo from "../../components/ProjectPageVideo.astro";
+import Layout from "../../layouts/Layout.astro";
+import img01 from "./equinor/equinor-home-view.png";
+import vid02 from "./equinor/equinor-node-graph-640x360-220kbps.mp4";
+import "./project-page.css";
+---
+
+<Layout>
+  <main class="project-content">
+    <article>
+      <section>
+        <header>
+          <time>February 2023</time>
+          <h1>Equinor 3D Offshore Windfarm Planner</h1>
+          <hr class="!bg-red-300" />
+          <p>We built a 3D platform to plan, build and operate offshore windfarms.</p>
+          <p>This was a pilot that was then greenlit to several further phases. Showcased at Microsoft Build 2023.</p>
+          <p>Made with BabylonJS, React and Azure</p>
+          <p><b>My role:</b> User experience design, WebGL development (Babylon.js), React development</p>
+        </header>
+      </section>
+      <section>
+        <ProjectPageVideo
+          youtubeSrc={"https://www.youtube-nocookie.com/embed/sJl_pZUQAbc"}
+          aspect="square"
+          gradient="stone-blue"
+        />
+      </section>
+      <section>
+        <h2>Project overview</h2>
+        <p>
+          The 3D Offshore Wind Farm Planner is a web-based application developed for Equinor, a global leader in
+          offshore wind energy. The tool allows users to design and visualize offshore wind farm layouts in an
+          interactive 3D environment directly in the browser.
+        </p>
+        <p>
+          Built using WebGL (Babylon.js), React, and Azure, the application helps stakeholders explore different turbine
+          placements, distances, and configurations while considering real-world geographic and environmental factors.
+          The 3D visualisation enhances decision-making by making complex spatial data accessible and intuitive.
+        </p>
+        <p>
+          The project demonstrates the power of immersive web technologies in supporting large-scale renewable energy
+          planning and showcases how modern cloud infrastructure can deliver high-performance 3D experiences to a global
+          audience.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo imageSrc={img01} gradient="stone-blue" />
+      </section>
+      <section>
+        <h2>Collaborating with an energy leader</h2>
+        <p>
+          Working closely with Equinor, one of the world's leading energy companies, our team ran collaborative
+          workshops across multiple countries to align on vision, gather feedback, and refine the user experience.
+        </p>
+        <p>
+          We partnered with both in-house stakeholders—including energy analysts, engineers, and product leads—and
+          external designers and developers to ensure the solution met real-world operational needs.
+        </p>
+        <p>
+          This cross-functional, international collaboration helped us shape a tool that is not only technically robust
+          but also deeply informed by the practical challenges of offshore wind farm planning.
+        </p>
+      </section>
+      <section>
+        <ProjectPageVideo videoSrc={vid02} gradient="purple-yellow" />
+      </section>
+      <section>
+        <h2>My contribution</h2>
+        <p>My role focused on:</p>
+        <ul class="list-disc ml-4">
+          <li>
+            WebGL Development: Built and optimized interactive 3D scenes using Babylon.js to ensure smooth performance
+            and accurate spatial visualization.
+          </li>
+          <li>React Development: Integrated complex 3D components seamlessly into a React-based web interface.</li>
+          <li>
+            User Interface Design: Designed intuitive user interactions and UI components to support an accessible and
+            engaging planning experience.
+          </li>
+        </ul>
+        The project showcases how immersive web technologies can support renewable energy initiatives and complex infrastructure
+        planning at scale.
+      </section>
+      <section></section>
+    </article>
+  </main>
+</Layout>
