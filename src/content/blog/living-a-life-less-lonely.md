@@ -9,7 +9,7 @@ I consider myself an extrovert, but between founding a [software agency](https:/
 
 However, along the way, my social life, and by extension, my well-being, quietly took a back seat.
 
-So I decided to be more deliberate about it. This post is a note to my future self -  a list of easy-to-do things that to get unstuck, in case I forget.
+So I decided to be more deliberate about it. This post is a note to my future self -  a list of easy-to-do things to get unstuck, in case I forget.
 
 ## Fill my calendar with coffee/lunch/walks
 It's easy to fall in to a cycle of waiting for someone or something to come by. But inevitably, nothing happens when nothing happens - a sort of cruel loop. 

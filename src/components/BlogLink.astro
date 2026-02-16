@@ -11,7 +11,7 @@ const { href, title, pubDate } = Astro.props;
 <li>
   <a href={href} class="group block">
     <div class="flex flex-col md:flex-row gap-2 md:gap-8 items-baseline">
-      <p class="date text-slate-500 font-mono text-sm shrink-0 w-32">
+      <p class="date font-mono text-sm shrink-0 w-24">
         {
           pubDate.toLocaleDateString("en-us", {
             year: "numeric",
@@ -20,7 +20,7 @@ const { href, title, pubDate } = Astro.props;
           })
         }
       </p>
-      <h4 class="font-hg text-xl group-hover:underline underline-offset-4 decoration-slate-500 decoration-1">
+      <h4 class="font-hg group-hover:underline underline-offset-4 decoration-slate-500 decoration-1">
         {title}
       </h4>
     </div>

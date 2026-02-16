@@ -20,7 +20,6 @@ import { ViewTransitions } from "astro:transitions";
 			<a href="/">
 				<h1>mark nguyen.</h1>
 			</a>
-			<a href="/blog" class="text-sm font-hg font-bold">BLOG</a>
 		</nav>
 		<slot />
 		<script>
@@ -50,14 +49,14 @@ ${bar}
 
 	@layer base {
 		body {
-			@apply w-full max-w-[1200px] m-auto min-h-screen flex flex-col gap-16 pt-2 pb-12 px-8;
+			@apply w-full max-w-[1200px] m-auto min-h-screen flex flex-col gap-16 pt-2 pb-12 px-8 text-slate-800;
 		}
 
 		main {
 			@apply flex flex-col gap-y-20;
 
 			a {
-				@apply font-hg text-slate-500;
+				@apply font-hg text-slate-400;
 
 				&:hover {
 					@apply underline underline-offset-4;

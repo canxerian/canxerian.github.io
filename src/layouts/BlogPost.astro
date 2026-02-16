@@ -4,44 +4,24 @@ import Layout from "./Layout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate, updatedDate } = Astro.props;
+const { title, pubDate } = Astro.props;
 ---
 
 <Layout>
-  <main class="w-full max-w-[800px] m-auto">
-    <article>
-      <div class="prose prose-slate w-full">
-        <div class="title mb-8">
-          <div class="date text-slate-500 mb-2">
-            <time datetime={pubDate.toISOString()}>
-              {
-                pubDate.toLocaleDateString("en-us", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })
-              }
-            </time>
-            {
-              updatedDate && (
-                <div class="last-updated-on">
-                  Last updated on{" "}
-                  <time datetime={updatedDate.toISOString()}>
-                    {updatedDate.toLocaleDateString("en-us", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </time>
-                </div>
-              )
-            }
-          </div>
-          <h1 class="text-4xl mb-4">{title}</h1>
-          <hr />
-        </div>
-        <slot />
-      </div>
-    </article>
-  </main>
+  <article class="prose prose-slate w-full">
+    <section class="date text-slate-500 mb-2">
+      <time datetime={pubDate.toISOString()}>
+        {
+          pubDate.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }
+      </time>
+    </section>
+    <h1 class="title text-4xl mb-4">{title}</h1>
+    <hr />
+    <slot />
+  </article>
 </Layout>
