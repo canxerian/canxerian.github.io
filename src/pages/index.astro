@@ -10,41 +10,21 @@ import vidEquinor from "./projects/equinor/equinor-project-thumb-960x540-1500kbp
 import imgCsr2 from "./projects/csr2/hero.jpeg";
 import imgAs3 from "./projects/as3/hero.jpg";
 import imgDeliveryOutlaw from "./projects/delivery-outlaw/hero.jpg";
-
-const blogLinks = [
-	{
-		title: "How Do Stencil Shaders Work?",
-		link: "https://medium.com/@mgb.nguyen/how-do-stencil-shaders-work-e2d46b27b737",
-	},
-	{
-		title: "Unity Stencil Shaders are perfect for making out-of-this world AR experiences",
-		link: "https://medium.com/@mgb.nguyen/unity-stencil-shaders-are-perfect-for-making-out-of-this-world-ar-experiences-cfd9679404ca",
-	},
-	{
-		title: "Improve Your Unity AR With These Four Techniques",
-		link: "https://medium.com/@mgb.nguyen/improve-your-unity-ar-apps-with-these-4-techniques-c0f47a098a94",
-	},
-	{
-		title: "Aligning Realities - How To Create XR Shared Experiences",
-		link: "https://medium.com/@mgb.nguyen/aligning-realities-how-to-create-xr-shared-experiences-2ace580b827b",
-	},
-];
+import BlogSection from "../components/BlogSection.astro";
 ---
 
 <Layout>
 	<main>
 		<section class="flex flex-col gap-4">
 			<h2 class="tracking-[0.8rem]">ABOUT</h2>
+			<p>Ex-Microsoft. Game developer, software engineer, and designer with 16 years of experience in the industry.</p>
 			<p>
-				I've 15 years experience as a professional software engineer working on complex, differentiated, 3D
-				immersive projects.
+				I run a design & development agency: <a href="https://llume.co">https://llume.co</a>
 			</p>
 			<p>
-				I was previously a software engineer at Microsoft (7 years), NaturalMotion/Zynga (3 years), Amazon (0.5 years),
-				Mediatonic/Epic Games (2.5 years) and Axisto Media (1 year).
-			</p>
-			<p>
-				I now run a design & development agency: <a href="https://llume.co">https://llume.co</a>
+				During Covid I had a go at writing/producing music <a href="https://www.youtube.com/@i.am.canxerian"
+					>youtube.com/@i.am.canxerian</a
+				>
 			</p>
 		</section>
 		<section class="flex flex-col gap-4">
@@ -86,7 +66,8 @@ const blogLinks = [
 				/>
 			</div>
 		</section>
-		<section class="flex flex-col gap-4">
+		<BlogSection />
+		<!-- <section class="flex flex-col gap-4">
 			<h2 class="tracking-[0.8rem]">BLOG</h2>
 			<ul>
 				{
@@ -96,6 +77,16 @@ const blogLinks = [
 						</li>
 					))
 				}
+			</ul>
+		</section> -->
+		<section class="flex flex-col gap-4">
+			<h2 class="tracking-[0.8rem]">WORK HISTORY</h2>
+			<ul>
+				<li>Microsoft - Senior Software Engineer (7 years)</li>
+				<li>Amazon - Software Engineer (0.5 years)</li>
+				<li>NaturalMotion/Zynga - Senior Software Engineer (3 years)</li>
+				<li>Mediatonic/Epic Games - Software Engineer (2.5 years)</li>
+				<li>Axisto Media - Software Engineer (1 year)</li>
 			</ul>
 		</section>
 		<section class="flex flex-col gap-4">

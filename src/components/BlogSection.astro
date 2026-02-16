@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import BlogLink from "../components/BlogLink.astro";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const blogLinks = [
+  {
+    date: new Date("Sep 19 2022"),
+    title: "How Do Stencil Shaders Work?",
+    link: "https://medium.com/@mgb.nguyen/how-do-stencil-shaders-work-e2d46b27b737",
+  },
+  {
+    date: new Date("Sep 19 2022"),
+    title: "Unity Stencil Shaders are perfect for making out-of-this world AR experiences",
+    link: "https://medium.com/@mgb.nguyen/unity-stencil-shaders-are-perfect-for-making-out-of-this-world-ar-experiences-cfd9679404ca",
+  },
+  {
+    date: new Date("Aug 15 2022"),
+    title: "Improve Your Unity AR With These Four Techniques",
+    link: "https://medium.com/@mgb.nguyen/improve-your-unity-ar-apps-with-these-4-techniques-c0f47a098a94",
+  },
+  {
+    date: new Date("Jul 16 2022"),
+    title: "Aligning Realities - How To Create XR Shared Experiences",
+    link: "https://medium.com/@mgb.nguyen/aligning-realities-how-to-create-xr-shared-experiences-2ace580b827b",
+  },
+];
+---
+
+<section class="flex flex-col gap-4">
+  <h2 class="tracking-[0.8rem]">BLOG</h2>
+  <ul class="flex flex-col gap-2">
+    {posts.map((post) => <BlogLink href={`/blog/${post.slug}/`} title={post.data.title} pubDate={post.data.pubDate} />)}
+    {blogLinks.map((blog) => <BlogLink href={blog.link} title={blog.title} pubDate={blog.date} />)}
+  </ul>
+</section>

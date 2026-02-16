@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  pubDate: Date;
+}
+
+const { href, title, pubDate } = Astro.props;
+---
+
+<li>
+  <a href={href} class="group block">
+    <div class="flex flex-col md:flex-row gap-2 md:gap-8 items-baseline">
+      <p class="date text-slate-500 font-mono text-sm shrink-0 w-32">
+        {
+          pubDate.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }
+      </p>
+      <h4 class="font-hg text-xl group-hover:underline underline-offset-4 decoration-slate-500 decoration-1">
+        {title}
+      </h4>
+    </div>
+  </a>
+</li>
